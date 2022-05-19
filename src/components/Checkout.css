@@ -1,0 +1,14 @@
+.checkout_container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: rgb(234, 234, 241);
+}
+
+.ad {
+        margin: 20px;
+}
+
+.ad > img {
+        width: 100%;
+}

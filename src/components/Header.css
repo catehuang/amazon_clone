@@ -1,0 +1,124 @@
+.header {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(20, 24, 24);
+        position: sticky;
+        top: 0;
+}
+
+.header_logo {
+        display: flex;
+        width: 120px;
+        object-fit: contain;
+        margin: 0 20px;
+}
+
+.header_address {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+}
+
+.header_locationIcon {
+        display: flex;
+        height: 15px !important;
+        margin-bottom: 0;
+}
+
+.header_search {
+        display: flex;
+        flex: 1;        
+        width: 90%;
+        align-items: center;
+        margin: auto 15px;
+}
+
+.header_search_category {
+        display: flex;
+        align-items: center;
+        background-color: rgb(248, 245, 245);
+        padding: 5px 8px;
+        border: 1px solid lightgray;
+        font-size: 12px;
+        border-radius: 3px 0px 0px 3px;
+}
+
+.header_searchInput {
+        display: flex;
+        height: 20px;
+        padding: 8px;
+        width: 90%;
+        border: none;
+}
+
+.header_searchIcon {
+        display: flex;
+        margin-top: 4px;
+        background-color: #ffbb62;
+        border-radius: 0px 3px 3px 0px;
+        padding: 6px;
+}
+
+.header_optionCountry {
+        display: flex;
+        align-items: center;
+}
+
+.flagIcon {
+        display: flex;
+        width: 40px;
+}
+
+.header_optionLineOne {
+        display: flex;
+        font-size : 12px;
+        padding-top: 5px;
+}
+
+.header_optionLineTwo {
+        display: flex;
+        font-size: 13px;
+        font-weight: 800;
+        vertical-align: middle;
+}
+
+.header_optionCart {
+        display: flex;
+        align-items: center;
+        color: white;
+}
+
+.header_cartCount {
+        display: flex;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: #ffbb62;
+}
+
+.header_nav {
+        display: flex;
+        justify-content: space-evenly;
+}
+
+.header_option {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: white;
+        padding: 3px;
+        vertical-align: middle;
+}
+
+.header_emptySpace {
+        display: flex;
+        margin-left: 25px;
+}
+
+.header_dropdownIcon {
+        display: flex;
+        vertical-align: middle;
+        color: rgb(156, 156, 156);
+        margin-left: 0;
+}
