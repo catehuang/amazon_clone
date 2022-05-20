@@ -7,7 +7,7 @@ function Checkout_Product({ id, image, title, price_sale, rating_global, rating 
 
         const removeFromCart = () => {
                 dispatch({
-                        type: ' REMOVE_FROM_CART',
+                        type: 'REMOVE_FROM_CART',
                         id: id,
                 })
         }
