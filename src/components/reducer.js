@@ -11,15 +11,21 @@ export const getCartTotal = (cart) =>
 const reducer = (state, action) => {
         console.log(action.type);
         switch (action.type) {
+                case 'EMPTY_CART':
+                        return {
+                                ...state,
+                                cart: []
+                        }
+        
                 case 'ADD_TO_CART':
                         return {
                                 ...state,
                                 cart: [...state.cart, action.item],
                         };
 
-                case "REMOVE_FROM_CART":
+                case 'REMOVE_FROM_CART':
                         const index = state.cart.findIndex(
-                                (cartItem) =>cartItem.id === action.id
+                                (cartItem) => cartItem.id === action.id
                         );
                         let newCart = [...state.cart];
 

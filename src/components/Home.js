@@ -11,77 +11,49 @@ function Home() {
                         <SubHeader />
                         <div className="home">
                                 <div className="home_container">
-                                        <img className="home_image" src='https://m.media-amazon.com/images/I/61Q0SScedvL._SX3000_.jpg' alt="promotions" />
-                                        <div className="home_category">
-                                                <div>
-                                                        <h2 className="home_categoryTitle">Best sellers</h2>
-                                                        <strong className="link_seeMore">See more</strong>
-                                                </div>
-                                                <div className="home_row">
-                                                        <Card
-                                                                title='New movie: "The Contractor"'
-                                                                image="https://images-na.ssl-images-amazon.com/images/G/15/digital/video/merch/Movie/VIOA_2022_DashboardCard_379x304_POST_Final_noLocale_DOT0590._SY304_CB623347768_.jpg"
-                                                                message="Watch now on Prime Video" />
-                                                        <Card
-                                                                title=""
-                                                                image=""
-                                                                message="" />
-                                                        <Card
-                                                                title=""
-                                                                image=""
-                                                                message="" />
-                                                        <Card
-                                                                title=""
-                                                                image=""
-                                                                message="" />
-                                                        <Card
-                                                                title=""
-                                                                image=""
-                                                                message="" />
-                                                </div>
+                                        <img className="home_image" src='https://m.media-amazon.com/images/I/81OD9jQpdtL._SX3000_.jpg' alt="promotions" />
+
+                                        <div className="home_row">
+                                                <Card
+                                                        title='Save on Renewed home entertainment"'
+                                                        image="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Events/XCM_CUTTLE_2320605_379x304_1X_en_CA._SY304_CB621807113_.jpg"
+                                                        message="See Renewed TVs" />
+                                                <Card
+                                                        title="Celebrate Pet Month"
+                                                        image="https://images-na.ssl-images-amazon.com/images/G/15/OHL_Marketing/Pets_22/petmonth_desktop_379x304._SY304_CB626651252_.jpg"
+                                                        message="Shop now" />
+                                                <Card
+                                                        title="Today's deal"
+                                                        image="https://m.media-amazon.com/images/I/41Xdzq6iz5L._AC_SY230_.jpg"
+                                                        card_option_line1="$27.99 - $48.99"
+                                                        card_option_line2="Save on SainSmart Jr Kid Toys"
+                                                        message="See more deals" />
+                                                <Card
+                                                        title="Fullmosa Smart Watch"
+                                                        image="https://m.media-amazon.com/images/I/81LzQ7b5zLS._AC_SX679_.jpg"
+                                                        card_option_line2="Full-touch Screen Fitness Tracker with Blood Oxygen Heart Rate Sleep Monitor "
+                                                        message="Learn more" />
+
                                         </div>
-                                        <div className="home_category">
-                                                <div>
-                                                        <h2 className="home_categoryTitle">Top rated</h2>
-                                                        <strong className="link_seeMore">See more</strong>
-                                                </div>
-                                                <div className="home_row">
-                                                        <Card
-                                                                id="14575454"
-                                                                title='Weight Loss by Gina - Spring/Summer 2022: Posts and Guidelines)'
-                                                                price_sale={22.00}
-                                                                image='https://images-na.ssl-images-amazon.com/images/I/61xPsfUSHCL._AC._SR360,460.jpg'
-                                                                rating_global={4.5}
-                                                                rating={41} />
-                                                        <Card
-                                                                id="11456784"
-                                                                title="Atlas of the Heart: Mapping Meaningful Connection and the Language of Human Experience"
-                                                                price_sale={22.99}
-                                                                image='https://m.media-amazon.com/images/I/91DNhLLmUOL._AC_UL320_.jpg'
-                                                                rating_global={4.5}
-                                                                rating={8885} />
-                                                        <Card
-                                                                id="12345678"
-                                                                title='Dr. Seuss Beginner Book Collection'
-                                                                price_sale={48.69}
-                                                                image='https://images-na.ssl-images-amazon.com/images/I/81FxtWFGiiL._AC._SR360,460.jpg'
-                                                                rating_global={5.0}
-                                                                rating={17264} />
-                                                        <Card
-                                                                id="15465656"
-                                                                title='Half Baked Harvest Every Day: Recipes for Balanced, Flexible, Feel-Good Meals: A Cookbook'
-                                                                price_sale={26.52}
-                                                                image='https://images-na.ssl-images-amazon.com/images/I/919VQ6lxLiL._AC._SR360,460.jpg'
-                                                                rating_global={5.0}
-                                                                rating={1314} />
-                                                        <Card
-                                                                id="19854254"
-                                                                title='First 100 Words: A Padded Board Books'
-                                                                price_sale={5.52}
-                                                                image='https://images-na.ssl-images-amazon.com/images/I/71aMpgf078L._AC._SR360,460.jpg'
-                                                                rating_global={4.5}
-                                                                rating={30284} />
-                                                </div>
+
+
+                                        <div className="home_row">
+                                                <Card
+                                                        title="New Beats Studio Buds"
+                                                        image="https://images-na.ssl-images-amazon.com/images/G/15/Apple_Marketing/SunsetPink_Flexible_Desktop__Cat_Card_379x304_v2._SY304_CB622066853_.jpg"
+                                                        message="Learn more" />
+                                                <Card
+                                                        title="Save on Renewed computers"
+                                                        image="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Events/XCM_CUTTLE_2320602_379x304_1X_en_CA._SY304_CB621807113_.jpg"
+                                                        message="See Renewed computers" />
+                                                <Card
+                                                        title="Save on Renewed office products"
+                                                        image="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Events/XCM_CUTTLE_2320601_379x304_1X_en_CA._SY304_CB621807113_.jpg"
+                                                        message="See Renewed office products" />
+                                                <Card
+                                                        title="New series: Ten Percent"
+                                                        image="https://images-na.ssl-images-amazon.com/images/G/15/digital/video/merch/TV/CMYA_S1_DashboardCard_379x304_POST_Final_noLocale_DOT0735._SY304_CB623891337_.jpg"
+                                                        message="Watch now on Prime Video" />
                                         </div>
                                 </div>
                         </div>

@@ -11,29 +11,29 @@ function Home_Books() {
                         <Header department="Books" />
                         <SubHeader />
                         <Books_Nav />
-                        <div className="home">
-                                <div className="home_container">
-                                        <img className="home_image" src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Books/XCM_CUTTLE_2346897_1500x375_en_CA.jpg" alt="" />
-                                        <div className="home_category">
+                        <div className="books_home">
+                                <div className="books_home_container">
+                                        <img className="books_home_image" src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Books/XCM_CUTTLE_2346897_1500x375_en_CA.jpg" alt="" />
+                                        <div className="books_home_category">
                                                 <div>
-                                                        <h2 className="home_categoryTitle"></h2>
+                                                        <h2 className="books_home_categoryTitle"></h2>
                                                         <strong className="link_seeMore"></strong>
                                                 </div>
-                                                <div className="home_row">
+                                                <div className="books_home_row">
                                                         <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321499_4668654_750x375_en_CA.jpg" /></div>
                                                         <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321501_4668655_750x375_en_CA.jpg" /></div>
                                                 </div>
-                                                <div className="home_row">
+                                                <div className="books_home_row">
                                                         <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2296405_4637785.jpg" /></div>
                                                         <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321500_4668653_750x375_en_CA.jpg" /></div>
                                                 </div>
                                         </div>
-                                        <div className="home_category">
+                                        <div className="books_home_category">
                                                 <div>
-                                                        <h2 className="home_categoryTitle">Best sellers</h2>
+                                                        <h2 className="books_home_categoryTitle">Best sellers</h2>
                                                         <strong className="link_seeMore">See more</strong>
                                                 </div>
-                                                <div className="home_row">
+                                                <div className="books_home_row">
                                                         <Product_Books
                                                                 id="14565878"
                                                                 title='It Ends with Us: A Novel (Volume 1)'
@@ -71,12 +71,12 @@ function Home_Books() {
                                                                 rating={57591} />
                                                 </div>
                                         </div>
-                                        <div className="home_category">
+                                        <div className="books_home_category">
                                                 <div>
-                                                        <h2 className="home_categoryTitle">Top rated</h2>
+                                                        <h2 className="books_home_categoryTitle">Top rated</h2>
                                                         <strong className="link_seeMore">See more</strong>
                                                 </div>
-                                                <div className="home_row">
+                                                <div className="books_home_row">
                                                         <Product_Books
                                                                 id="14575454"
                                                                 title='Weight Loss by Gina - Spring/Summer 2022: Posts and Guidelines)'

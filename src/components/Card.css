@@ -1,0 +1,57 @@
+.card {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        padding: 20px;
+        z-index: 1;
+        margin-right: 20px;
+}
+
+.card_main_frame_1 {
+        height: 90%;
+}
+
+.card_title {
+        font-weight: bold;
+        margin: 0 auto 10px 0;
+        max-height: 20%;
+}
+
+.card_image {
+        height: 80%;
+        width: 100%;
+        object-fit: contain;
+}
+
+.card_image > img {
+        max-height: 200px;
+        width: 100%;
+        object-fit: scale-down;
+} 
+
+.card_option_line1 {
+        font-size: 14px;
+        margin-bottom: 3px;
+        line-height: 1.5em;
+        white-space: nowrap; 
+        width: 250px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+}
+
+.card_option_line2 {
+        font-size: 8px;
+        line-height: 1.5em;
+        white-space: nowrap; 
+        width: 250px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+}
+
+.card_link {
+        font-size: 8px;
+        font-weight: bold;
+        color: #007185;
+        margin: 10px auto 0 0;
+}
+
