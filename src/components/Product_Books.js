@@ -1,12 +1,27 @@
 import React from 'react';
 import './Product_Books.css';
+import { useStateValue } from './StateProvider';
 
-function Product_Books({ id, title, price_sale, price_original, image, rating_global, rating }) {
+function Product_Books({ id, title, price_sale, image, rating_global, rating }) {
         const price_saleInteger = Math.floor(price_sale);
         const price_saleFraction = (price_sale - Math.floor(price_sale)).toFixed(2).substring(2);
         const numberFormat = new Intl.NumberFormat('en-US');
         const ratingNumber = numberFormat.format(rating);
-
+        const [state, dispatch ] = useStateValue();
+        const addToCart = () => (
+                dispatch({
+                        type: 'ADD_TO_CART',
+                        item: {
+                                id: id,
+                                title: title,
+                                image: image,
+                                price_sale: price_sale,
+                                rating_global: rating_global,
+                                rating: rating,
+                        },
+                })
+        );
+        
         return (
                 <div className="product">
                         <img src={image} alt="" />
@@ -30,7 +45,7 @@ function Product_Books({ id, title, price_sale, price_original, image, rating_gl
                                         <span className="product_ratingNumber">{ratingNumber}</span>
                                 </div>
                         </div>
-                        <button>Add to Cart</button>
+                        <button onClick={addToCart}>Add to Cart</button>
                 </div>
         )
 }

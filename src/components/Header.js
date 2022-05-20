@@ -6,12 +6,18 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
+import { Link } from "react-router-dom";
+import { useStateValue } from './StateProvider';
 
-function Header() {
+function Header({ department }) {
+        const [{ cart }, dispatch] = useStateValue();
+
         return (
                 <div className='header'>
                         { /* Logo */}
-                        <img className="header_logo" src={amzonLogo} />
+                        <Link to="/">
+                                <img className="header_logo" src={amzonLogo} alt="" />
+                        </Link>
 
                         {/* Address */}
                         <div className="header_address">
@@ -27,7 +33,7 @@ function Header() {
                         {/* Search bar */}
                         <div className="header_search">
                                 <span className="header_search_category">
-                                        Books
+                                        {department}
                                         <ArrowDropDownTwoToneIcon className="header_dropdownIcon" />
                                 </span>
                                 <input className="header_searchInput" type="text" />
@@ -37,7 +43,7 @@ function Header() {
                         <div className="header_nav">
                                 {/* country */}
                                 <div className="header_optionCountry">
-                                        <img className="flagIcon" src={flag} />
+                                        <img className="flagIcon" src={flag} alt="" />
                                         <ArrowDropDownTwoToneIcon className="header_dropdownIcon" />
                                 </div>
 
@@ -57,10 +63,12 @@ function Header() {
                                 </div>
 
                                 {/* shoppingcart */}
-                                <div className="header_option">
-                                        <span className="header_optionLineOne header_cartCount">0</span>
-                                        <ShoppingCartIcon className="header_optionCart" />
-                                </div>
+                                <Link to="/checkout">
+                                        <div className="header_option">
+        <span className="header_optionLineOne header_cartCount">{cart?.length}</span>
+                                                <ShoppingCartIcon className="header_optionCart" />
+                                        </div>
+                                </Link>
                         </div>
                 </div>
         )

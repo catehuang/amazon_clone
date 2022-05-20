@@ -1,6 +1,4 @@
 import './App.css';
-import Header from './components/Header';
-import SubHeader from './components/SubHeader';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 import Books_Home from './components/Books_Home';
@@ -13,8 +11,6 @@ import {
 function App() {
         return (
                 <div>
-                        <Header />
-                        <SubHeader />
                         <Router>
                                 <div className="App">
                                         <Routes>

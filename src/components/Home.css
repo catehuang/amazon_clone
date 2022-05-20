@@ -11,6 +11,11 @@
 
 .home_image {
         width: 100%;
+        overflow: hidden;
+}
+
+.home_image > img {
+        object-fit: contain;
 }
 
 .home_categoryTitle {
@@ -24,3 +29,4 @@
 .link_seeMore {
         color: #007185;
 }
+

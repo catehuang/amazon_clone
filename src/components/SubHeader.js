@@ -2,6 +2,7 @@ import React from 'react';
 import './SubHeader.css'
 import MenuIcon from '@material-ui/icons/Menu';
 import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
+import { Link } from "react-router-dom";
 
 function SubHeader() {
         return (
@@ -26,7 +27,9 @@ function SubHeader() {
                         <div className="subHeader_option">Sell</div>
                         <div className="subHeader_option">Electronics</div>
                         <div className="subHeader_option">Home</div>
-                        <div className="subHeader_option">Books</div>
+                        <Link to="/books">
+                                <div className="subHeader_option">Books</div>
+                        </Link>
                         <div className="subHeader_option">Amazon Outlet</div>
                         <div className="subHeader_option">Toys & Games</div>
                         <h3 className="subHeader_slogan">New deals everyday</h3>
