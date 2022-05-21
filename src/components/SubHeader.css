@@ -1,28 +1,39 @@
 .subHeader {
         display: flex;
         background-color: rgba(1, 11, 24, 0.904);
+        padding: 8px;
 }
 
 .subHeader_option {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 3px;
-        margin: 5px 5px;
+        margin: 3px 10px;
         color: white;
         vertical-align: middle;
-        font-size: 14px;
+        font-size: 12px;
         text-shadow: 1px 1px rgb(68, 84, 116);
 }
 
+.subHeader_line {
+        display: flex;
+}
+
+.subHeader_menuIcon >div {
+        width: 15px;
+        height: 1px;
+        background-color: white;
+        margin: 3px 0;
+}
+
 .subHeader_menuIcon {
-        margin-right: 3px;
-        vertical-align: middle;
+        margin-right: 8px;
 }
 
 .subHeader_dropdownIcon {
-        vertical-align: middle;
-        color: rgb(156, 156, 156);
+        margin-left: 5px;
+        color: lightgrey;
+        font-size: 0.3rem;
 }
 
 .subHeader_slogan {

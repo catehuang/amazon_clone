@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import './Header.css';
 import amzonLogo from '../icons/amazon_ca.jpg';
@@ -15,7 +16,7 @@ function Header({ department }) {
         return (
                 <div className='header'>
                         { /* Logo */}
-                        <Link to="/">
+                        <Link to="/" className="header_link">
                                 <img className="header_logo" src={amzonLogo} alt="" />
                         </Link>
 
@@ -44,17 +45,19 @@ function Header({ department }) {
                                 {/* country */}
                                 <div className="header_optionCountry">
                                         <img className="flagIcon" src={flag} alt="" />
-                                        <ArrowDropDownTwoToneIcon className="header_dropdownIcon" />
+                                        <span className="subHeader_dropdownIcon">▼</span> 
                                 </div>
 
                                 {/* account */}
-                                <div className="header_option">
-                                        <span className="header_optionLineOne">Hello, Sign in</span>
-                                        <span className="header_optionLineTwo">
-                                                Account & Lists
-                                                <ArrowDropDownTwoToneIcon className="header_dropdownIcon" />
-                                        </span>
-                                </div>
+                                <Link to="/login" className="header_link">
+                                        <div className="header_option">
+                                                <span className="header_optionLineOne">Hello, Sign in</span>
+                                                <span className="header_optionLineTwo">
+                                                        Account & Lists
+                                                        <span className="subHeader_dropdownIcon">▼</span> 
+                                                </span>
+                                        </div>
+                                </Link>
 
                                 {/* orders */}
                                 <div className="header_option">
@@ -63,9 +66,9 @@ function Header({ department }) {
                                 </div>
 
                                 {/* shoppingcart */}
-                                <Link to="/checkout">
+                                <Link to="/checkout" className="header_link">
                                         <div className="header_option">
-        <span className="header_optionLineOne header_cartCount">{cart?.length}</span>
+                                                <span className="header_optionLineOne header_cartCount">{cart?.length}</span>
                                                 <ShoppingCartIcon className="header_optionCart" />
                                         </div>
                                 </Link>

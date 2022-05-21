@@ -1,7 +1,5 @@
 import React from 'react';
 import './SubHeader.css'
-import MenuIcon from '@material-ui/icons/Menu';
-import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
 import { Link } from "react-router-dom";
 
 function SubHeader() {
@@ -9,7 +7,11 @@ function SubHeader() {
                 <div className="subHeader">
                         <div className="subHeader_option">
                                 <span className="subHeader_line">
-                                        <MenuIcon className="subHeader_menuIcon" />
+                                        <div className="subHeader_menuIcon">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                        </div>
                                         All
                                 </span>
                         </div>
@@ -19,20 +21,19 @@ function SubHeader() {
                         <div className="subHeader_option">New Releases</div>
                         <div className="subHeader_option">
                                 <span className="subHeader_line">
-                                        Prime
-                                        <ArrowDropDownTwoToneIcon className="subHeader_dropdownIcon" />
+                                        Prime <span className="subHeader_dropdownIcon">▼</span> 
                                 </span>
                         </div>
                         <div className="subHeader_option">Fashion</div>
                         <div className="subHeader_option">Sell</div>
                         <div className="subHeader_option">Electronics</div>
                         <div className="subHeader_option">Home</div>
-                        <Link to="/books">
+                        <Link to="/books" className="header_link">
                                 <div className="subHeader_option">Books</div>
                         </Link>
                         <div className="subHeader_option">Amazon Outlet</div>
                         <div className="subHeader_option">Toys & Games</div>
-                        <h3 className="subHeader_slogan">New deals everyday</h3>
+                        <h4 className="subHeader_slogan">New deals everyday</h4>
                 </div>
         )
 }
