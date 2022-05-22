@@ -12,13 +12,13 @@
         display: flex;
         width: 120px;
         object-fit: contain;
-        margin: 0 20px;
+        margin: 0 10px;
 }
 
 .header_address {
         display: flex;
         align-items: center;
-        margin-right: 10px;
+        margin-right: 5px;
 }
 
 .header_locationIcon {
@@ -111,11 +111,6 @@
         color: white;
         padding: 3px;
         vertical-align: middle;
-}
-
-.header_emptySpace {
-        display: flex;
-        margin-left: 25px;
 }
 
 .header_dropdownIcon {

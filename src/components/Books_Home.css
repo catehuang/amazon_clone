@@ -3,6 +3,7 @@
         justify-content: center;
         width: 100%;
         overflow: auto;
+        padding-bottom: 100px;
 }
 
 .books_home_new_release {

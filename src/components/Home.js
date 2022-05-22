@@ -12,8 +12,11 @@ function Home() {
                         <SubHeader />
                         <div className="home">
                                 <div className="home_container">
-                                        <img className="home_image" src='https://m.media-amazon.com/images/I/81OD9jQpdtL._SX3000_.jpg' alt="promotions" />
-
+                                        <div className="home_slideshow_container">
+                                                <div className="home_slide">
+                                                        <img className="home_image" src='https://m.media-amazon.com/images/I/81OD9jQpdtL._SX3000_.jpg' alt="" />
+                                                </div>
+                                        </div>
                                         <div className="home_row">
                                                 <Card
                                                         title='Save on Renewed home entertainment"'

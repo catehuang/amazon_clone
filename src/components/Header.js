@@ -3,7 +3,6 @@ import React from 'react';
 import './Header.css';
 import amzonLogo from '../icons/amazon_ca.jpg';
 import flag from '../icons/country.jpg';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
@@ -30,10 +29,9 @@ function Header({ department }) {
                         {/* Address */}
                         <div className="header_address">
                                 <div className="header_option">
-        <span className="header_optionLineOne header_emptySpace">{ user ? "Deliver to " : 'Hello'}</span>
+                                        <span className="header_optionLineOne">Hello, </span>
                                         <span className="header_optionLineTwo">
-                                                <LocationOnOutlinedIcon className="header_locationIcon" />
-                                                Select your address
+                                                {user ? user: 'Guest'}
                                         </span>
                                 </div>
                         </div>
@@ -52,16 +50,16 @@ function Header({ department }) {
                                 {/* country */}
                                 <div className="header_optionCountry">
                                         <img className="flagIcon" src={flag} alt="" />
-                                        <span className="subHeader_dropdownIcon">▼</span> 
+                                        <span className="subHeader_dropdownIcon">▼</span>
                                 </div>
 
                                 {/* account */}
                                 <Link to={!user && "/login"} className="header_link" onClick={handleAuthentication}>
                                         <div className="header_option" >
-                                                <span className="header_optionLineOne">Hello {user ? ', Sign Out' : ', Sign In'}</span>
+                                                <span className="header_optionLineOne">{user ? 'Sign Out' : 'Sign In'}</span>
                                                 <span className="header_optionLineTwo">
                                                         Account & Lists
-                                                        <span className="subHeader_dropdownIcon">▼</span> 
+                                                        <span className="subHeader_dropdownIcon">▼</span>
                                                 </span>
                                         </div>
                                 </Link>
