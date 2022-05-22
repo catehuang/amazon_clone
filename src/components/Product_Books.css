@@ -20,7 +20,7 @@
 
 .product_title {
         display: inline-block;
-        font-size: 14px;
+        font-size: 16px;
         text-overflow: ellipsis;
         word-wrap: break-word;
         overflow: hidden;
@@ -30,11 +30,6 @@
 
 .product_priceSale {
         margin-top: 5px;
-}
-
-.product_priceOriginal {
-        font-size: small;
-        color: grey;
 }
 
 .product_rating_stars {
@@ -47,13 +42,13 @@
 
 
 .product_ratingNumber {
-        font-size: xx-small;
+        font-size: 12px;
         color: rgb(49, 49, 49);
         margin-left: 5px;
 }
 
 .product > button {
-        font-size: 10px;
+        font-size: 14px;
         background-color: #ffd365;
         border: 1px solid;
         margin-top: 10px;
@@ -73,6 +68,6 @@
 }
 
 .product_priceSymbol, .product_priceFraction {
-        font-size: xx-small;
+        font-size: 12px;
         vertical-align: top;
 }

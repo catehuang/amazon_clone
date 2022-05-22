@@ -41,12 +41,16 @@
 }
 
 .checkout_product_info > button {
-        background-color: #f0c14b;
+        background-color: #ffd66f;
         border: 1px solid;
         margin-top: 10px;
         border-color: #a99734 #9c7e31 #846129;
         color: #111;
         border-radius: 3px;
+}
+
+.checkout_product_info > button:hover {
+        background-color: #ffb700;
 }
 
 .checkout_product_price {

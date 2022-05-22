@@ -4,6 +4,7 @@ import Product_Books from './Product_Books';
 import Header from './Header';
 import SubHeader from './SubHeader';
 import Books_Nav from './Books_Nav';
+import Footer from './Footer';
 
 function Home_Books() {
         return (
@@ -14,20 +15,17 @@ function Home_Books() {
                         <div className="books_home">
                                 <div className="books_home_container">
                                         <img className="books_home_image" src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Books/XCM_CUTTLE_2346897_1500x375_en_CA.jpg" alt="" />
-                                        <div className="books_home_category">
-                                                <div>
-                                                        <h2 className="books_home_categoryTitle"></h2>
-                                                        <strong className="link_seeMore"></strong>
-                                                </div>
-                                                <div className="books_home_row">
-                                                        <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321499_4668654_750x375_en_CA.jpg" /></div>
-                                                        <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321501_4668655_750x375_en_CA.jpg" /></div>
-                                                </div>
-                                                <div className="books_home_row">
-                                                        <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2296405_4637785.jpg" /></div>
-                                                        <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321500_4668653_750x375_en_CA.jpg" /></div>
-                                                </div>
+
+                                        <div className="books_home_new_release">
+                                                <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321499_4668654_750x375_en_CA.jpg" /></div>
+                                                <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321501_4668655_750x375_en_CA.jpg" /></div>
                                         </div>
+
+                                        <div className="books_home_new_release">
+                                                <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2296405_4637785.jpg" /></div>
+                                                <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321500_4668653_750x375_en_CA.jpg" /></div>
+                                        </div>
+                                        
                                         <div className="books_home_category">
                                                 <div>
                                                         <h2 className="books_home_categoryTitle">Best sellers</h2>
@@ -115,7 +113,8 @@ function Home_Books() {
                                                 </div>
                                         </div>
                                 </div>
-                        </div>
+                        </div >
+                        <Footer />
                 </>
         )
 }

@@ -3,6 +3,7 @@ import './Home.css';
 import Card from './Card';
 import Header from './Header';
 import SubHeader from './SubHeader';
+import Footer from './Footer';
 
 function Home() {
         return (
@@ -57,6 +58,7 @@ function Home() {
                                         </div>
                                 </div>
                         </div>
+                        <Footer />
                 </>
         )
 }

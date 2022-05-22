@@ -5,14 +5,29 @@
         overflow: auto;
 }
 
+.books_home_new_release {
+        margin: 50px;
+        justify-content: center;
+        display: flex;
+}
+
+.recommend_book {
+        margin-right: 60px;
+}
+
+.recommend_book > img {
+        object-fit: contain;
+        width: 100%;
+}
+
 .books_home_row {
         display: flex;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
 }
 
 .books_home_category {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 }
 
 .books_home_image {
@@ -29,15 +44,4 @@
 
 .link_seeMore {
         color: #007185;
-}
-
-.recommend_book {
-        display: flex;
-        margin: 10px 10px;
-}
-
-.recommend_book > img {
-        max-height: 400px;
-        width: 100%;
-        object-fit: contain;
 }

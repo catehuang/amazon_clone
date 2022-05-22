@@ -35,7 +35,7 @@
 }
 
 .subtotal > button {
-        background-color: #ffce2c;
+        background-color: #ffe283;
         border-radius: 8px;
         width: 100%;
         height: 30px;
@@ -44,4 +44,8 @@
         color: rgb(26, 25, 25);
         padding: 8px;
         align-items: center;
+}
+
+.subtotal > button:hover {
+        background-color: #ffc400;
 }

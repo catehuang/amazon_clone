@@ -1,6 +1,7 @@
 import React from 'react';
 import './Checkout_Product.css';
 import { useStateValue } from './StateProvider';
+import CurrencyFormat from 'react-currency-format';
 
 function Checkout_Product({ id, image, title, price_sale, rating_global, rating }) {
         const [{ cart }, dispatch] = useStateValue();
@@ -23,7 +24,20 @@ function Checkout_Product({ id, image, title, price_sale, rating_global, rating 
                                 <p className="isGift"><input type="checkbox" /> This will be a gift</p>
                                 <button onClick={removeFromCart}>Delete</button>        
                         </div>
-                        <div className="checkout_product_price">$ {price_sale}</div>
+                        <CurrencyFormat
+                                renderText={(value) => (
+                                        <div className="checkout_product_price">
+                                                <p>
+                                                        <strong>{value}</strong>
+                                                </p>
+                                        </div>
+                                )}
+                                decimalScale={2}
+                                value={price_sale}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={"$"}
+                        />
                 </div>
         )
 }
