@@ -17,7 +17,7 @@
 .header_address {
         display: flex;
         align-items: center;
-        margin-right: 20px;
+        margin-right: 10px;
 }
 
 .header_locationIcon {

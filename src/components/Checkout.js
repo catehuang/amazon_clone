@@ -9,7 +9,7 @@ import SubHeader from './SubHeader';
 import { useStateValue } from './StateProvider';
 
 function Checkout() {
-        const [{ cart }, dispatch] = useStateValue();
+        const [{ cart, user }, dispatch] = useStateValue();
 
         return (
                 <div className="checkout">

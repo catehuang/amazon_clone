@@ -9,9 +9,16 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
 import { Link } from "react-router-dom";
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 
 function Header({ department }) {
-        const [{ cart }, dispatch] = useStateValue();
+        const [{ cart, user }, dispatch] = useStateValue();
+
+        const handleAuthentication = () => {
+                if (user) {
+                        auth.signOut();
+                }
+        }
 
         return (
                 <div className='header'>
@@ -23,7 +30,7 @@ function Header({ department }) {
                         {/* Address */}
                         <div className="header_address">
                                 <div className="header_option">
-                                        <span className="header_optionLineOne header_emptySpace">Hello</span>
+        <span className="header_optionLineOne header_emptySpace">{ user ? "Deliver to " : 'Hello'}</span>
                                         <span className="header_optionLineTwo">
                                                 <LocationOnOutlinedIcon className="header_locationIcon" />
                                                 Select your address
@@ -49,9 +56,9 @@ function Header({ department }) {
                                 </div>
 
                                 {/* account */}
-                                <Link to="/login" className="header_link">
-                                        <div className="header_option">
-                                                <span className="header_optionLineOne">Hello, Sign in</span>
+                                <Link to={!user && "/login"} className="header_link" onClick={handleAuthentication}>
+                                        <div className="header_option" >
+                                                <span className="header_optionLineOne">Hello {user ? ', Sign Out' : ', Sign In'}</span>
                                                 <span className="header_optionLineTwo">
                                                         Account & Lists
                                                         <span className="subHeader_dropdownIcon">▼</span> 

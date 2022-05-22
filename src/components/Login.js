@@ -2,28 +2,45 @@
 import React, { useState } from 'react';
 import './Login.css';
 import login_amazon_ca from '../icons/login_amazon_ca.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from './firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
 
 function Login() {
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
+        const navigate = useNavigate();
 
         const signIn = e => {
                 e.preventDefault();
                 
+                signInWithEmailAndPassword (auth, email, password)
+                .then((userCredential) => {
+                        console.log(userCredential);
+                        const user = userCredential.user;
+
+                        if (auth) {
+                                navigate('/');
+                        }
+                })
+                .catch((error) => alert(error.message))
+
+        }
+
+        const register = e => {
+                e.preventDefault();
+
                 createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                         // it successfully created a new user with email and password
                         console.log(userCredential);
                         const user = userCredential.user;
+
+                        if (auth) {
+                                navigate('/');
+                        }
                 })
                 .catch((error) => alert(error.message))
-        }
-
-        const register = e => {
-                e.preventDefault();
         }
 
         return (
