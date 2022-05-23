@@ -31,7 +31,7 @@ function Header({ department }) {
                                 <div className="header_option">
                                         <span className="header_optionLineOne">Hello, </span>
                                         <span className="header_optionLineTwo">
-                                                {user ? user: 'Guest'}
+                                                {user ? user.email: 'Guest'}
                                         </span>
                                 </div>
                         </div>

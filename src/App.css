@@ -1,4 +1,46 @@
 a:visited, a:link, a:active
 {
+    color: #111;
     text-decoration: none;
+}
+
+.font_color_red {
+    color: rgb(180, 14, 14);
+}
+
+.font_color_link {
+    color: rgb(3, 131, 143);
+}
+
+.button_orange {
+        background-color: #ffd66f;
+        border: 1px solid;
+        margin-top: 10px;
+        border-color: #a99734 #9c7e31 #846129;
+        color: #111;
+        border-radius: 3px;
+        padding: 10px;
+        width: 100%;
+}
+
+.button_orange:hover {
+    background-color: #ffc229;
+}
+
+.button_grey {
+    width: 100%;
+    text-transform: none;
+    border-radius: 3px;
+    padding: 8px;
+    border: 1px solid grey;
+    margin: 30px auto 12px auto ;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.button_grey:hover {
+    background: rgb(221, 219, 216);  
+    border: 1px solid rgb(158, 158, 158);
 }

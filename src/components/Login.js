@@ -52,20 +52,20 @@ function Login() {
                                 <form className="login_form">
                                         <h2>Sign-In</h2>
 
-                                        <p className="login_form_email_info">E-mail address or mobile phone number</p>
+                                        <h5>E-mail address</h5>
                                         <input type="text" value={email} className="login_form_email" onChange={e => setEmail(e.target.value)} />
 
-                                        <p className="login_form_password_info">Password</p>
+                                        <h5 className="login_form_password_info">Password</h5>
                                         <input type="password" value={password} className="login_form_password" onChange={e => setPassword(e.target.value)}/>
 
-                                        <button type="submit" onClick={signIn} >Login</button>
+                                        <button type="submit" className="button_orange" onClick={signIn} >Login</button>
 
                                         <p className="login_form_agreement">By continuing, you agree to Amazon FAKE CLONE's Conditions of Use and Privacy Notice.</p>
                                         <p className="login_form_helper"><span className="login_form_triangle">▶</span>  Need help?</p>
                                 </form>
                                 <div className="login_for_new">
                                         <p className="login_line_break"><span>New to Amazon FAKE CLONE ?</span></p>
-                                        <button onClick={register}>Create your Amazon FAKE CLONE account</button>
+                                        <button className="button_grey" onClick={register}>Create your Amazon FAKE CLONE account</button>
                                 </div>
                                 <div className="login_footer">
                                         <div className="login_footer_link">

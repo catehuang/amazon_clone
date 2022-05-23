@@ -48,18 +48,7 @@
 }
 
 .product > button {
-        font-size: 14px;
-        background-color: #ffd365;
-        border: 1px solid;
-        margin-top: 10px;
-        padding: 8px;
-        border-color: #a99734 #9c7e31 #846129;
-        color: #111;
-        border-radius: 3px;
-}
-
-.product > button:hover {
-        background-color: #ffb700;
+        width: 40%;
 }
 
 .product_info {

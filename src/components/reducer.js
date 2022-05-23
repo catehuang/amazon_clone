@@ -1,5 +1,3 @@
-import { createMuiTheme } from "@material-ui/core";
-
 export const initialState = {
         cart: [],
         user: null

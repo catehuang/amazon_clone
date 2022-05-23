@@ -45,7 +45,7 @@ function Product_Books({ id, title, price_sale, image, rating_global, rating }) 
                                         <span className="product_ratingNumber">{ratingNumber}</span>
                                 </div>
                         </div>
-                        <button onClick={addToCart}>Add to Cart</button>
+                        <button className="button_orange" onClick={addToCart}>Add to Cart</button>
                 </div>
         )
 }
