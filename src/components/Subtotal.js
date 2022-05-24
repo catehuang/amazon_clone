@@ -28,13 +28,13 @@ function Subtotal() {
                                                         <input type="checkbox" /> This order contains a gift
                                                 </p>
 
-                                                {value != '$0' &&
+                                                {value != '$0.00' &&
                                                 <button className="button_orange" onClick={e => navigate('/payment')}>
                                                         Proceed to Checkout
                                                 </button>
                                                 }
                                                 
-                                                {value === '$0' &&
+                                                {value === '$0.00' &&
                                                 <button className="button_disabled">
                                                         Proceed to Checkout
                                                 </button>

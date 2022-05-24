@@ -5,7 +5,7 @@ function Footer() {
         return (
                 <div className="footer">
 
-                        <div className="footer_back_to_top"><h4>Back to top</h4></div>
+                        <div className="footer_back_to_top"><a href="#top"><h4>Back to top</h4></a></div>
                         <div className="footer_area1">
                                 <div className="footer_area1_row">
                                         <h5>Get to Know Us</h5>

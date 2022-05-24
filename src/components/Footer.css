@@ -9,6 +9,10 @@
         padding: 10px;
 }
 
+.footer_back_to_top > a {
+        color: white;
+}
+
 .footer_area1 {
         display: flex;
         background-color: rgb(27, 49, 70);

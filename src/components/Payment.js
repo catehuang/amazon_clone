@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Payment.css'
 import { useStateValue } from './StateProvider';
-import login_amazon_ca from '../icons/login_amazon_ca.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import Checkout_Product from './Checkout_Product';
 import { getCartTotal } from './reducer';
@@ -73,7 +72,7 @@ function Payment() {
                 <div className="payment">
                         <div className="payment_amazon_logo">
                                 <Link to="/">
-                                        <img src={login_amazon_ca} />
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png" />
                                 </Link>
                                 <Link to="/checkout">
                                         <h2 className="payment_checkout_message">Checkout ({cart?.length}) items</h2>

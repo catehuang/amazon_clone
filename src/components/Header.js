@@ -1,8 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import './Header.css';
-import amzonLogo from '../icons/amazon_ca.jpg';
-import flag from '../icons/country.jpg';
+
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
@@ -23,7 +22,7 @@ function Header({ department }) {
                 <div className='header'>
                         { /* Logo */}
                         <Link to="/" className="header_link">
-                                <img className="header_logo" src={amzonLogo} alt="" />
+                                <img className="header_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png" alt="" />
                         </Link>
 
                         {/* Address */}
@@ -49,7 +48,7 @@ function Header({ department }) {
                         <div className="header_nav">
                                 {/* country */}
                                 <div className="header_optionCountry">
-                                        <img className="flagIcon" src={flag} alt="" />
+                                        <img className="flagIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png" alt="" />
                                         <span className="subHeader_dropdownIcon">▼</span>
                                 </div>
 

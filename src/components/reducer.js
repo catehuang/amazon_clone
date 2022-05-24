@@ -5,8 +5,8 @@ export const initialState = {
 
 // Selector
 export const getCartTotal = (cart) =>
-        cart?.reduce((amount, item) => item.price_sale + amount, 0.00);
-        
+        cart?.reduce((amount, item) => item.price_sale + amount, 0.00).toFixed(2);
+
 const reducer = (state, action) => {
         console.log(action.type);
         switch (action.type) {

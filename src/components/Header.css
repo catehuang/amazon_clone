@@ -13,6 +13,7 @@
         width: 120px;
         object-fit: contain;
         margin: 0 10px;
+        filter: saturate(3000%) brightness(100000%) contrast(10000%);
 }
 
 .header_address {
@@ -32,7 +33,7 @@
         flex: 1;        
         width: 100%;
         align-items: center;
-        margin: auto 0 auto 10px;
+        margin: auto 30px auto 10px;
 }
 
 .header_search_category {
@@ -70,7 +71,7 @@
 
 .flagIcon {
         display: flex;
-        width: 40px;
+        width: 30px;
 }
 
 .header_optionLineOne {

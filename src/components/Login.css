@@ -5,8 +5,9 @@
 }
 
 .login_amazon_logo {
-        margin: 10px auto;
-        text-align: center;
+        width: 10%;
+        margin: 40px auto;
+        margin-left: 25%;
 }
 
 .login_form {

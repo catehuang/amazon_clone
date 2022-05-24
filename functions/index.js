@@ -1,8 +1,8 @@
 const functions = require("firebase-functions");
 const express = require('express');
 const cors = require('cors');
-const API_KEY=`${process.env.REACT_APP_STRIPE_SECRET_KEY}`;
-const stripe = require('stripe')(API_KEY);
+const STRIPE_API_KEY=`${process.env.REACT_APP_STRIPE_SECRET_KEY}`;
+const stripe = require('stripe')(STRIPE_API_KEY);
 
 // App config
 const app = express();

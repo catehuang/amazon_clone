@@ -1,7 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import './Login.css';
-import login_amazon_ca from '../icons/login_amazon_ca.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from './firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
@@ -47,7 +46,9 @@ function Login() {
                 <div className="login">
                         <div className="login_container">
                                 <Link to="/">
-                                        <div className="login_amazon_logo"><img src={login_amazon_ca} /></div>
+                                        <div className="login_amazon_logo">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png" />
+                                        </div>
                                 </Link>
                                 <form className="login_form">
                                         <h2>Sign-In</h2>

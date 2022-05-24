@@ -14,7 +14,7 @@ function Home_Books() {
                         <Books_Nav />
                         <div className="books_home">
                                 <div className="books_home_container">
-                                        <img className="books_home_image" src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Books/XCM_CUTTLE_2346897_1500x375_en_CA.jpg" alt="" />
+                                        <img className="books_home_image" src="https://images-na.ssl-images-amazon.com/images/G/15/Books/XCM_Manual_2316200_4654576_1500x300_en_US.jpg" alt="" />
 
                                         <div className="books_home_new_release">
                                                 <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321499_4668654_750x375_en_CA.jpg" /></div>
