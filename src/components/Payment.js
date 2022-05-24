@@ -28,7 +28,7 @@ function Payment() {
                                 method: 'post',
                                 // Stripe expects the total in a currencies subunits
                                 // 10 USD => 1000 cents
-                                url: `/payments/create?total=${getCartTotal(cart) *100}`
+                                url: `/payments/create?total=${Math.round(getCartTotal(cart) *100)}`
                         })
                         setClientSecret(response.data.clientSecret);
                 }

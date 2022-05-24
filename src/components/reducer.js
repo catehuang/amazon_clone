@@ -5,10 +5,10 @@ export const initialState = {
 
 // Selector
 export const getCartTotal = (cart) =>
-        cart?.reduce((amount, item) => item.price_sale + amount, 0.00).toFixed(2);
+        cart?.reduce((amount, item) => item.price_sale + amount, 0.00);
 
 const reducer = (state, action) => {
-        console.log(action.type);
+        //console.log(action.type);
         switch (action.type) {
                 case 'EMPTY_CART':
                         return {
