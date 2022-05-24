@@ -15,14 +15,18 @@ function Checkout_Product({ id, image, title, price_sale, rating_global, rating 
 
         return (
                 <div className='checkout_product'>
-                        <div className="checkout_product_image"><img  src={image} /></div>
+                        <div className="checkout_product_image"><img src={image} /></div>
                         <div className="checkout_product_info">
-                                <p className="checkout_product_title">{title}</p>
-                                <p className="type_of_book">Hardcover</p>
-                                <p className="available">In Stock</p>
+                                <h4>{title}</h4>
+                                <h4 className="type_of_book">Hardcover</h4>
+                                <p className="available font_color_link">In Stock</p>
                                 <p className="shipping_info">Ship from and sold by Amazon.ca</p>
-                                <p className="isGift"><input type="checkbox" /> This will be a gift</p>
-                                <button onClick={removeFromCart}>Delete</button>        
+                                <div className="isGift">
+                                        <input type="checkbox" /> 
+                                        <p>This will be a gift</p>
+                                </div>
+
+                                <button className="button_orange" onClick={removeFromCart}>Delete</button>
                         </div>
                         <CurrencyFormat
                                 renderText={(value) => (
@@ -33,6 +37,7 @@ function Checkout_Product({ id, image, title, price_sale, rating_global, rating 
                                         </div>
                                 )}
                                 decimalScale={2}
+                                fixedDecimalScale={true}
                                 value={price_sale}
                                 displayType={"text"}
                                 thousandSeparator={true}

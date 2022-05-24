@@ -7,7 +7,7 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { useNavigate } from 'react-router-dom';
 
 function Subtotal() {
-        const navigate  = useNavigate();
+        const navigate = useNavigate();
         const [{ cart }, dispatch] = useStateValue();
 
         return (
@@ -27,15 +27,28 @@ function Subtotal() {
                                                 <p className="subtotal_gift">
                                                         <input type="checkbox" /> This order contains a gift
                                                 </p>
+
+                                                {value != '$0' &&
+                                                <button className="button_orange" onClick={e => navigate('/payment')}>
+                                                        Proceed to Checkout
+                                                </button>
+                                                }
+                                                
+                                                {value === '$0' &&
+                                                <button className="button_disabled">
+                                                        Proceed to Checkout
+                                                </button>
+                                                }
                                         </div>
                                 )}
                                 decimalScale={2}
+                                fixedDecimalScale={true}
                                 value={getCartTotal(cart)}
                                 displayType={"text"}
                                 thousandSeparator={true}
                                 prefix={"$"}
                         />
-                        <button className="button_orange" onClick={e => navigate('/payment')}>Proceed to Checkout</button>
+
                 </div>
         )
 }

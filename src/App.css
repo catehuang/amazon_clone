@@ -37,10 +37,21 @@ a:visited, a:link, a:active
     background: #ECE9E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
 }
 
 .button_grey:hover {
     background: rgb(221, 219, 216);  
     border: 1px solid rgb(158, 158, 158);
+}
+
+.button_disabled {
+    width: 100%;
+    text-transform: none;
+    border-radius: 3px;
+    padding: 8px;
+    border: 1px solid grey;
+    margin: 30px auto 12px auto ;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

@@ -24,7 +24,7 @@ function Checkout() {
                                         <div className="checkout_area">
                                                 <div className="checkout_item">
                                                         <div className="checkout_title_header">
-                                                                <div className="column1"><h3>Shopping Cart</h3></div>
+                                                                <div className="column1"><h2>Shopping Cart</h2></div>
                                                                 <div className="column2"><p>price</p></div>
                                                         </div>
 
