@@ -40,13 +40,6 @@ function Home_Books() {
                                                                 rating_global={4}
                                                                 rating={72291} />
                                                         <Product_Books
-                                                                id="154873666"
-                                                                title='Daily Timeboxing Planner: Daily Scrum, Time Block Journal, Productivity, To-Do List, Time Management'
-                                                                price_sale={8.85}
-                                                                image='https://images-na.ssl-images-amazon.com/images/I/61wb-o356nS._AC._SR360,460.jpg'
-                                                                rating_global={3}
-                                                                rating={11} />
-                                                        <Product_Books
                                                                 id="154873154"
                                                                 title='Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
                                                                 price_sale={21.66}
@@ -67,12 +60,32 @@ function Home_Books() {
                                                                 image='https://images-na.ssl-images-amazon.com/images/I/610QYM5NxRL._AC._SR360,460.jpg'
                                                                 rating_global={4}
                                                                 rating={57591} />
-
+                                                        <Product_Books
+                                                                id="12234321"
+                                                                title='The Fiber Fueled Cookbook: Inspiring Plant-Based Recipes to Turbocharge Your Health'
+                                                                price_sale={26.50}
+                                                                image='https://images-na.ssl-images-amazon.com/images/I/91cDoM87dYL._AC._SR360,460.jpg'
+                                                                rating_global={5}
+                                                                rating={119} />
+                                                        <Product_Books
+                                                                id="12484641"
+                                                                title='The Seven Husbands of Evelyn Hugo: A Novel'
+                                                                price_sale={14.70}
+                                                                image='https://images-na.ssl-images-amazon.com/images/I/71pQQ9mk8eL._AC._SR360,460.jpg'
+                                                                rating_global={4}
+                                                                rating={64109} />
+                                                        <Product_Books
+                                                                id="66484321"
+                                                                title='Where the Crawdads Sing'
+                                                                price_sale={15.50}
+                                                                image='https://images-na.ssl-images-amazon.com/images/I/61m1Vxw8tiL._AC._SR360,460.jpg'
+                                                                rating_global={4}
+                                                                rating={219108} />
                                                 </div>
                                         </div>
                                         <div className="books_home_category">
                                                 <div className="books_home_categoryTitle">
-                                                        <h2>Top rated</h2>
+                                                        <h2>Hot new releases</h2>
                                                         <h3 className="font_color_link">See more</h3>
                                                 </div>
                                                 <div className="books_home_row">
@@ -111,6 +124,20 @@ function Home_Books() {
                                                                 image='https://images-na.ssl-images-amazon.com/images/I/71aMpgf078L._AC._SR360,460.jpg'
                                                                 rating_global={4}
                                                                 rating={30284} />
+                                                        <Product_Books
+                                                                id="154873666"
+                                                                title='Daily Timeboxing Planner: Daily Scrum, Time Block Journal, Productivity, To-Do List, Time Management'
+                                                                price_sale={8.85}
+                                                                image='https://images-na.ssl-images-amazon.com/images/I/61wb-o356nS._AC._SR360,460.jpg'
+                                                                rating_global={3}
+                                                                rating={11} />
+                                                                                                                        <Product_Books
+                                                                id="154877366"
+                                                                title='Fossil Future: Why Global Human Flourishing Requires More Oil, Coal, and Natural Gas--Not Less'
+                                                                price_sale={39.60}
+                                                                image='https://images-na.ssl-images-amazon.com/images/I/71q2KapfDsL._AC._SR360,460.jpg'
+                                                                rating_global={5}
+                                                                rating={1} />
                                                 </div>
                                         </div>
                                 </div>

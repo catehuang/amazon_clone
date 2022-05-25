@@ -27,6 +27,7 @@
 .books_home_row {
         display: flex;
         width: 100%;
+        justify-content: space-evenly;
 }
 
 .books_home_category {
@@ -38,7 +39,6 @@
         margin-top: 30px;
         margin-bottom: 10px;
 }
-
 
 .books_home_categoryTitle > h3 {
         margin-left: 20px;
