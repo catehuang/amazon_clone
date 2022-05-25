@@ -25,11 +25,11 @@ function Home_Books() {
                                                 <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2296405_4637785.jpg" /></div>
                                                 <div className="recommend_book"><img src="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2021/img/Books/XCM_Manual_2321500_4668653_750x375_en_CA.jpg" /></div>
                                         </div>
-                                        
+
                                         <div className="books_home_category">
-                                                <div>
-                                                        <h2 className="books_home_categoryTitle">Best sellers</h2>
-                                                        <strong className="link_seeMore">See more</strong>
+                                                <div className="books_home_categoryTitle">
+                                                        <h2>Best sellers</h2>
+                                                        <h3 className="font_color_link">See more</h3>
                                                 </div>
                                                 <div className="books_home_row">
                                                         <Product_Books
@@ -67,12 +67,13 @@ function Home_Books() {
                                                                 image='https://images-na.ssl-images-amazon.com/images/I/610QYM5NxRL._AC._SR360,460.jpg'
                                                                 rating_global={4}
                                                                 rating={57591} />
+
                                                 </div>
                                         </div>
                                         <div className="books_home_category">
-                                                <div>
-                                                        <h2 className="books_home_categoryTitle">Top rated</h2>
-                                                        <strong className="link_seeMore">See more</strong>
+                                                <div className="books_home_categoryTitle">
+                                                        <h2>Top rated</h2>
+                                                        <h3 className="font_color_link">See more</h3>
                                                 </div>
                                                 <div className="books_home_row">
                                                         <Product_Books
@@ -113,7 +114,8 @@ function Home_Books() {
                                                 </div>
                                         </div>
                                 </div>
-                        </div >
+                        </div>
+
                         <Footer />
                 </>
         )

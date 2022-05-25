@@ -7,6 +7,7 @@ import { getCartTotal } from './reducer';
 import CurrencyFormat from 'react-currency-format';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from './axios';
+import { db } from './firebase';
 
 function Payment() {
         const [{ cart, user }, dispatch] = useStateValue();
@@ -21,6 +22,9 @@ function Payment() {
         const [disabled, setDisabled] = useState(true);
         const [clientSecretNotString, setClientSecret] = useState("");
         const clientSecret = clientSecretNotString.toString();
+        const shippingFee = 6.99;
+        const tax = 0.05;
+        const totalAmountOfItems = (Math.round(getCartTotal(cart) * 100)) / 100;
 
         useEffect(() => {
                 const getClientSecret = async () => {
@@ -28,7 +32,7 @@ function Payment() {
                                 method: 'post',
                                 // Stripe expects the total in a currencies subunits
                                 // 10 USD => 1000 cents
-                                url: `/payments/create?total=${Math.round(getCartTotal(cart) *100)}`
+                                url: `/payments/create?total=${Math.round(getCartTotal(cart) * 100)}`
                         })
                         setClientSecret(response.data.clientSecret);
                 }
@@ -45,7 +49,7 @@ function Payment() {
                         // Stripe.js has not yet loaded.
                         // Make sure to disable form submission until Stripe.js has loaded.
                         return;
-                 }
+                }
 
                 setProcessing(true);
 
@@ -53,11 +57,27 @@ function Payment() {
                         payment_method: {
                                 card: elements.getElement(CardElement)
                         }
-                }).then(({ paymentIntent }) =>{
+                }).then(({ paymentIntent }) => {
                         // paymentIntent = payment confirmation
+
+                        db
+                                .collection('users')
+                                .doc(user?.uid)
+                                .collection('orders')
+                                .doc(paymentIntent.id)
+                                .set({
+                                        cart: cart,
+                                        amount: paymentIntent.amount,
+                                        created: paymentIntent.created
+                                });
+
                         setSucceeded(true);
                         setError(null);
                         setProcessing(false);
+
+                        dispatch({
+                                type: 'EMPTY_CART'
+                        })
 
                         navigate('/orders', { replace: true });
                 });
@@ -118,7 +138,7 @@ function Payment() {
                                                         <div className="payment_priceContainer">
                                                                 <CurrencyFormat
                                                                         renderText={(value) => (
-                                                                                <h3 className="font_color_red">Order Total: {value}</h3>
+                                                                                <h3 className="font_color_red">Order Total: ${Math.round((totalAmountOfItems+shippingFee)*(1+tax)*100)/100}</h3>
                                                                         )}
                                                                         decimalScale={2}
                                                                         fixedDecimalScale={true}
@@ -149,28 +169,27 @@ function Payment() {
                                                                 <p>Estimated GST/HST:</p>
                                                                 <p>Estimated PST/RST/QST:</p>
                                                         </div>
-                                                        <div className="payment_order_summary_fee">
-                                                                <CurrencyFormat
-                                                                        renderText={(value) => (
-                                                                                <p>{value}</p>
-                                                                        )}
-                                                                        decimalScale={2}
-                                                                        fixedDecimalScale={true}
-                                                                        value={getCartTotal(cart)}
-                                                                        displayType={"text"}
-                                                                        thousandSeparator={true}
-                                                                        prefix={"$"}
-                                                                />
-                                                                <p>--</p>
-                                                                <p>--</p>
-                                                                <p>--</p>
-                                                                <p>--</p>
-                                                        </div>
-
+                                                        <CurrencyFormat
+                                                                renderText={(value) => (
+                                                                        <div className="payment_order_summary_fee">
+                                                                                <p>${totalAmountOfItems}</p>
+                                                                                <p>${shippingFee}</p>
+                                                                                <p>${Math.round((totalAmountOfItems + shippingFee)*100)/100}</p>
+                                                                                <p>${Math.round((totalAmountOfItems+shippingFee)*tax*100)/100}</p>
+                                                                                <p>0.00</p>
+                                                                        </div>
+                                                                )}
+                                                                decimalScale={2}
+                                                                fixedDecimalScale={true}
+                                                                value={getCartTotal(cart)}
+                                                                displayType={"text"}
+                                                                thousandSeparator={true}
+                                                                prefix={"$"}
+                                                        />
                                                 </div>
                                                 <div className="payment_order_summary_total">
                                                         <h3 className="payment_order_summary_total_tile font_color_red">Order Total</h3>
-                                                        <h3 className="payment_order_summary_total_fee font_color_red">--</h3>
+                                                                <h3 className="payment_order_summary_total_fee font_color_red">${Math.round((totalAmountOfItems+shippingFee)*(1+tax)*100)/100}</h3>
                                                 </div>
 
                                         </div>
