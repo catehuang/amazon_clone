@@ -7,6 +7,7 @@ import Header from './Header';
 import SubHeader from './SubHeader';
 import { useStateValue } from './StateProvider';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 function Checkout() {
         const [{ cart, user }, dispatch] = useStateValue();
@@ -73,15 +74,24 @@ function Checkout() {
                                                                 <div className="checkout_empty_info">
                                                                         <h2>Your Amazon Cart is empty</h2>
                                                                         <h5 className="font_color_link">Shop today's deals</h5>
-                                                                        <div className="checkout_empty_buttons">
-                                                                                <div className="checkout_empty_button_sign_in">
-                                                                                        <button className="button_orange">Sign in your account</button>
-                                                                                </div>
-                                                                                <div className="checkout_empty_button_sign_up">
-                                                                                        <button className="button_grey">Sign up now</button>
-                                                                                </div>
+                                                                        {user?.email.length == null &&
+                                                                                <div className="checkout_empty_buttons">
+                                                                                        <Link to='/login'>
+                                                                                                <div className="checkout_empty_button_sign_in">
 
-                                                                        </div>
+                                                                                                        <button className="button_orange">Sign in your account</button>
+
+                                                                                                </div>
+                                                                                        </Link>
+                                                                                        <Link to='/login'>
+                                                                                                <div className="checkout_empty_button_sign_up">
+
+                                                                                                        <button className="button_grey">Sign up now</button>
+
+                                                                                                </div>
+                                                                                        </Link>
+                                                                                </div>
+                                                                        }
                                                                 </div>
                                                                 <p></p>
                                                         </div>
@@ -96,7 +106,7 @@ function Checkout() {
                                                 <p>
                                                         Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay.
                                                 </p>
-                                        </div>                                        
+                                        </div>
                                 </div>
                         </div>
                         <Footer />

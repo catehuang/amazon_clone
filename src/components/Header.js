@@ -25,16 +25,6 @@ function Header({ department }) {
                                 <img className="header_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png" alt="" />
                         </Link>
 
-                        {/* Address */}
-                        <div className="header_address">
-                                <div className="header_option">
-                                        <span className="header_optionLineOne">Hello, </span>
-                                        <span className="header_optionLineTwo">
-                                                {user ? user.email: 'Guest'}
-                                        </span>
-                                </div>
-                        </div>
-
                         {/* Search bar */}
                         <div className="header_search">
                                 <span className="header_search_category">
@@ -47,27 +37,35 @@ function Header({ department }) {
 
                         <div className="header_nav">
                                 {/* country */}
+
                                 <div className="header_optionCountry">
                                         <img className="flagIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png" alt="" />
                                         <span className="subHeader_dropdownIcon">▼</span>
                                 </div>
 
-                                {/* account */}
+
+                                <div className="header_address">
+                                        <div className="header_option">
+                                                <span className="header_optionLineOne">Hello,</span>
+                                                <span className="header_optionLineTwo"> {user ? user.email : 'Guest'}</span>
+                                        </div>
+                                </div>
+
+
                                 <Link to={!user && "/login"} className="header_link" onClick={handleAuthentication}>
                                         <div className="header_option" >
-                                                <span className="header_optionLineOne">{user ? 'Sign Out' : 'Sign In'}</span>
-                                                <span className="header_optionLineTwo">
-                                                        Account & Lists
-                                                        <span className="subHeader_dropdownIcon">▼</span>
-                                                </span>
+                                                <span className="header_optionLineOne">Accounts & Lists </span>
+                                                <span className="header_optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
                                         </div>
                                 </Link>
 
                                 {/* orders */}
-                                <div className="header_option">
-                                        <span className="header_optionLineOne">Return</span>
-                                        <span className="header_optionLineTwo">& Orders</span>
-                                </div>
+                                <Link to='/orders'  className="header_link">
+                                        <div className="header_option">
+                                                <span className="header_optionLineOne">Return</span>
+                                                <span className="header_optionLineTwo">& Orders</span>
+                                        </div>
+                                </Link>
 
                                 {/* shoppingcart */}
                                 <Link to="/checkout" className="header_link">

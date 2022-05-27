@@ -12,7 +12,7 @@
         display: flex;
         width: 120px;
         object-fit: contain;
-        margin: 0 10px;
+        margin: 0 20px;
         filter: saturate(3000%) brightness(100000%) contrast(10000%);
 }
 
@@ -33,7 +33,7 @@
         flex: 1;        
         width: 100%;
         align-items: center;
-        margin: auto 30px auto 10px;
+        margin: auto 20px auto 10px;
 }
 
 .header_search_category {
@@ -96,7 +96,7 @@
 .header_cartCount {
         display: flex;
         margin-left: 10px;
-        margin-right: 10px;
+        margin-right: 20px;
         color: #ffbb62;
 }
 

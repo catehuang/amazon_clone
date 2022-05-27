@@ -10,14 +10,15 @@
 }
 
 .checkout_product_image {
-        height: 150px;
+        height: 180px;
         align-items: center;
         width: 15%;
-        padding: 10px;
+        padding: 5px;
 }
 
 .checkout_product_image > img {
-        width: 125px;
+        max-height: 170px;
+        margin-left: 20px;
 }
 
 .type_of_book, .available, .shipping_info, .isGift {
@@ -30,7 +31,7 @@
         display: flex;
 }
 
-.isGift > p{
+.isGift > p {
         margin-left: 5px;
 }
 
@@ -41,12 +42,12 @@
 .checkout_product_info > button {
         width: 8%;
         padding: 5px;
+        margin-top: 5px;
 }
 
 .checkout_product_price {
         width: 10%;
-        font-size: 16px;
         font-weight: bolder;
-        margin-right: 20px;
+        margin-right: 40px;
         text-align-last: right;
 }

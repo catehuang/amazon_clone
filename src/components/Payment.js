@@ -8,6 +8,7 @@ import CurrencyFormat from 'react-currency-format';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from './axios';
 import { db } from './firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 function Payment() {
         const [{ cart, user }, dispatch] = useStateValue();
@@ -38,19 +39,13 @@ function Payment() {
                 }
 
                 getClientSecret();
-        }, [cart])
+        }, [cart]);
 
-        //console.log('THE SECRET IS >>>', clientSecret)
+        // console.log('THE SECRET IS >>>', clientSecret);
+        
 
         const handleSubmit = async (event) => {
                 event.preventDefault();
-
-                if (!stripe || !elements) {
-                        // Stripe.js has not yet loaded.
-                        // Make sure to disable form submission until Stripe.js has loaded.
-                        return;
-                }
-
                 setProcessing(true);
 
                 const payload = await stripe.confirmCardPayment(clientSecret, {
@@ -59,18 +54,17 @@ function Payment() {
                         }
                 }).then(({ paymentIntent }) => {
                         // paymentIntent = payment confirmation
+                        
 
-                        db
-                                .collection('users')
-                                .doc(user?.uid)
-                                .collection('orders')
-                                .doc(paymentIntent.id)
-                                .set({
-                                        cart: cart,
-                                        amount: paymentIntent.amount,
-                                        created: paymentIntent.created
-                                });
-
+                        /*
+                        const ref = doc(db, 'users', user?.uid, 'orders', paymentIntent.id);
+                        
+                        setDoc(ref, {
+                                cart: cart,
+                                amount: paymentIntent.amount,
+                                created: paymentIntent.created
+                        });
+*/
                         setSucceeded(true);
                         setError(null);
                         setProcessing(false);
@@ -78,7 +72,7 @@ function Payment() {
                         dispatch({
                                 type: 'EMPTY_CART'
                         })
-
+                        console.log(user?.uid, paymentIntent.id);
                         navigate('/orders', { replace: true });
                 });
         }
@@ -129,7 +123,7 @@ function Payment() {
                                                 </div>
                                         </div>
                                         <div className="payment_method">
-                                                <h3 className="payment_title">Choose a payment method</h3>
+                                                <h3 className="payment_title" id="payment_method_area">Choose a payment method</h3>
                                                 <form onSubmit={handleSubmit}>
                                                         <div className="payment_cardElement">
                                                                 <CardElement onChange={handleChange} />
@@ -138,7 +132,7 @@ function Payment() {
                                                         <div className="payment_priceContainer">
                                                                 <CurrencyFormat
                                                                         renderText={(value) => (
-                                                                                <h3 className="font_color_red">Order Total: ${Math.round((totalAmountOfItems+shippingFee)*(1+tax)*100)/100}</h3>
+                                                                                <h3 className="font_color_red">Order Total: ${Math.round((totalAmountOfItems + shippingFee) * (1 + tax) * 100) / 100}</h3>
                                                                         )}
                                                                         decimalScale={2}
                                                                         fixedDecimalScale={true}
@@ -148,7 +142,6 @@ function Payment() {
                                                                         prefix={"$"}
                                                                 />
                                                                 <button className="button_orange" disabled={processing || disabled || succeeded}>
-
                                                                         <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                                                                 </button>
                                                         </div>
@@ -158,7 +151,10 @@ function Payment() {
                                 </div>
                                 <div className="payment_order_summary">
                                         <div className="payment_order_summary_upper">
-                                                <button className="button_orange">Buy Now</button>
+                                                <p className="button_orange button_buy_now">
+                                                        <a href="#payment_method_area">Choose a payment method</a>
+                                                </p>
+
                                                 <p className="payment_order_summary_payment_info">Choose a payment method to continue checking out. You'll still have a chace to review your order before it's final.</p>
                                                 <h3>Order Summary</h3>
                                                 <div className="payment_order_summary_content">
@@ -174,8 +170,8 @@ function Payment() {
                                                                         <div className="payment_order_summary_fee">
                                                                                 <p>${totalAmountOfItems}</p>
                                                                                 <p>${shippingFee}</p>
-                                                                                <p>${Math.round((totalAmountOfItems + shippingFee)*100)/100}</p>
-                                                                                <p>${Math.round((totalAmountOfItems+shippingFee)*tax*100)/100}</p>
+                                                                                <p>${Math.round((totalAmountOfItems + shippingFee) * 100) / 100}</p>
+                                                                                <p>${Math.round((totalAmountOfItems + shippingFee) * tax * 100) / 100}</p>
                                                                                 <p>0.00</p>
                                                                         </div>
                                                                 )}
@@ -189,7 +185,7 @@ function Payment() {
                                                 </div>
                                                 <div className="payment_order_summary_total">
                                                         <h3 className="payment_order_summary_total_tile font_color_red">Order Total</h3>
-                                                                <h3 className="payment_order_summary_total_fee font_color_red">${Math.round((totalAmountOfItems+shippingFee)*(1+tax)*100)/100}</h3>
+                                                        <h3 className="payment_order_summary_total_fee font_color_red">${Math.round((totalAmountOfItems + shippingFee) * (1 + tax) * 100) / 100}</h3>
                                                 </div>
 
                                         </div>
