@@ -1,20 +1,20 @@
 // @ts-nocheck
 import React from 'react';
 import './Header.css';
-
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
 import { Link } from "react-router-dom";
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
+import { signOut } from 'firebase/auth'
 
 function Header({ department }) {
         const [{ cart, user }, dispatch] = useStateValue();
 
         const handleAuthentication = () => {
                 if (user) {
-                        auth.signOut();
+                        signOut(auth);
                 }
         }
 

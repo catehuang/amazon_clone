@@ -22,6 +22,7 @@ function Payment() {
         const [error, setError] = useState(null);
         const [disabled, setDisabled] = useState(true);
         const [clientSecretNotString, setClientSecret] = useState("");
+
         const clientSecret = clientSecretNotString.toString();
         const shippingFee = 6.99;
         const tax = 0.05;
@@ -53,10 +54,8 @@ function Payment() {
                                 card: elements.getElement(CardElement)
                         }
                 }).then(({ paymentIntent }) => {
-                        // paymentIntent = payment confirmation
-                        
+                        console.log(paymentIntent.amount, paymentIntent.created);
 
-                        /*
                         const ref = doc(db, 'users', user?.uid, 'orders', paymentIntent.id);
                         
                         setDoc(ref, {
@@ -64,7 +63,7 @@ function Payment() {
                                 amount: paymentIntent.amount,
                                 created: paymentIntent.created
                         });
-*/
+
                         setSucceeded(true);
                         setError(null);
                         setProcessing(false);
@@ -72,7 +71,7 @@ function Payment() {
                         dispatch({
                                 type: 'EMPTY_CART'
                         })
-                        console.log(user?.uid, paymentIntent.id);
+                        
                         navigate('/orders', { replace: true });
                 });
         }
