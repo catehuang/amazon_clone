@@ -15,16 +15,17 @@ import Payment from './components/Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Orders from './components/Orders';
-import {onAuthStateChanged} from 'firebase/auth'
+import { onAuthStateChanged } from 'firebase/auth'
 
-const promise = loadStripe ('pk_test_51L2PfuDPS4dF2ifLrzPZD0G23PEWfMW4tALkMdPTcgyUl5j2bO6OmXWqoaRyMHQFEYqfoVLtIZIiE8rigU1pLvac00Hgc1joB2');
+const promise = loadStripe('pk_test_51L2PfuDPS4dF2ifLrzPZD0G23PEWfMW4tALkMdPTcgyUl5j2bO6OmXWqoaRyMHQFEYqfoVLtIZIiE8rigU1pLvac00Hgc1joB2');
 
 function App() {
         const [{ }, dispatch] = useStateValue();
+
         useEffect(() => {
                 // will only run once when the app component loads
                 onAuthStateChanged(auth, authUser => {
-                       // console.log('The user is >>> ', authUser);
+                        // console.log('The user is >>> ', authUser);
 
                         if (authUser) {
                                 // the user just logged in / the user was logged in
@@ -51,7 +52,7 @@ function App() {
                                                 <Route path="/books" element={<Books_Home />}></Route>
                                                 <Route path="/checkout" element={<Checkout />}></Route>
                                                 <Route path="/payment" element={
-                                                        <Elements stripe={promise}>
+                                                        <Elements stripe={promise} >
                                                                 <Payment />
                                                         </Elements>}>
                                                 </Route>

@@ -49,7 +49,7 @@ function Orders() {
                         <Header department="All" />
                         <SubHeader />
                         <div className='orders'>
-                                <h1>Your Orders</h1>
+                                <h1>Thank you, your order has been confirmed!</h1>
 
                                 <div className='orders__order'>
                                         {orders?.map(order => (

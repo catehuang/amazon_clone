@@ -4,6 +4,9 @@ import Card from './Card';
 import Header from './Header';
 import SubHeader from './SubHeader';
 import Footer from './Footer';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 
 function Home() {
         return (
@@ -13,9 +16,24 @@ function Home() {
                         <div className="home">
                                 <div className="home_container">
                                         <div className="home_slideshow_container">
-                                                <div className="home_slide">
-                                                        <img className="home_image" src='https://m.media-amazon.com/images/I/81OD9jQpdtL._SX3000_.jpg' alt="" />
-                                                </div>
+                                                <Carousel
+                                                        autoPlay
+                                                        infiniteLoop
+                                                        showIndicators={false}
+                                                        showStatus={false}
+                                                        showThumbs={false}
+                                                        interval={5000}>
+                                                                
+                                                        <div className="home_slide">
+                                                                <img loading="lazy" className="home_image" src='https://m.media-amazon.com/images/I/81OD9jQpdtL._SX3000_.jpg' alt="" />
+                                                        </div>
+                                                        <div className="home_slide">
+                                                                <img loading="lazy" className="home_image" src='https://images-na.ssl-images-amazon.com/images/G/15/kindle/journeys/Zjc1NTA4OGMt/Zjc1NTA4OGMt-OTdhZGU0ZGMt-w3000._CB649606010_.jpg' alt="" />
+                                                        </div>
+                                                        <div className="home_slide">
+                                                                <img loading="lazy" className="home_image" src='https://m.media-amazon.com/images/I/61cSozkWFcL._SX3000_.jpg' alt="" />
+                                                        </div>
+                                                </Carousel>
                                         </div>
                                         <div className="home_row">
                                                 <Card

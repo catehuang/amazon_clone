@@ -8,7 +8,7 @@ import CurrencyFormat from 'react-currency-format';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from './axios';
 import { db } from './firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, addDoc, collection } from 'firebase/firestore';
 
 function Payment() {
         const [{ cart, user }, dispatch] = useStateValue();
@@ -34,9 +34,11 @@ function Payment() {
                                 method: 'post',
                                 // Stripe expects the total in a currencies subunits
                                 // 10 USD => 1000 cents
-                                url: `/payments/create?total=${Math.round(getCartTotal(cart) * 100)}`
+                                //url: `/payments/create?total=${Math.round(getCartTotal(cart) * 100)}`
+                                url: `/payments/create?total=${Math.round((totalAmountOfItems + shippingFee) * (1 + tax) * 100)}`
                         })
                         setClientSecret(response.data.clientSecret);
+                        console.log(`URL = /payments/create?total=${Math.round((totalAmountOfItems + shippingFee) * (1 + tax) * 100)}`);
                 }
 
                 getClientSecret();
@@ -44,7 +46,6 @@ function Payment() {
 
         // console.log('THE SECRET IS >>>', clientSecret);
         
-
         const handleSubmit = async (event) => {
                 event.preventDefault();
                 setProcessing(true);
@@ -54,16 +55,27 @@ function Payment() {
                                 card: elements.getElement(CardElement)
                         }
                 }).then(({ paymentIntent }) => {
-                        console.log(paymentIntent.amount, paymentIntent.created);
-
-                        const ref = doc(db, 'users', user?.uid, 'orders', paymentIntent.id);
+                        const usersCollectionRef = collection(db, "users");
+                        addDoc(usersCollectionRef, { name: 'New Name', age: Number(20) });
+/*   
+                        //const orderCollection = collection(db, 'users', user?.uid, 'orders');
+                        const orderRef = collection(db, 'users', user?.uid, 'orders');
                         
-                        setDoc(ref, {
+                        addDoc(orderRef, {
+                                order_id: paymentIntent.id,
                                 cart: cart,
                                 amount: paymentIntent.amount,
                                 created: paymentIntent.created
                         });
 
+
+                        addDoc(orderCollection, {
+                                payment_id: paymentIntent.id,
+                                cart: cart,
+                                amount: paymentIntent.amount,
+                                created: paymentIntent.created
+                        });
+*/
                         setSucceeded(true);
                         setError(null);
                         setProcessing(false);

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
@@ -37,12 +36,10 @@ function Header({ department }) {
 
                         <div className="header_nav">
                                 {/* country */}
-
                                 <div className="header_optionCountry">
                                         <img className="flagIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png" alt="" />
                                         <span className="subHeader_dropdownIcon">▼</span>
                                 </div>
-
 
                                 <div className="header_address">
                                         <div className="header_option">
@@ -51,9 +48,8 @@ function Header({ department }) {
                                         </div>
                                 </div>
 
-
                                 <Link to={!user && "/login"} className="header_link" onClick={handleAuthentication}>
-                                        <div className="header_option" >
+                                        <div className="header_option header_accounts_lists" >
                                                 <span className="header_optionLineOne">Accounts & Lists </span>
                                                 <span className="header_optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
                                         </div>
@@ -61,7 +57,7 @@ function Header({ department }) {
 
                                 {/* orders */}
                                 <Link to='/orders'  className="header_link">
-                                        <div className="header_option">
+                                        <div className="header_option header_return_orders">
                                                 <span className="header_optionLineOne">Return</span>
                                                 <span className="header_optionLineTwo">& Orders</span>
                                         </div>
