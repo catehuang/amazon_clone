@@ -55,8 +55,6 @@ function Payment() {
                                 card: elements.getElement(CardElement)
                         }
                 }).then(({ paymentIntent }) => {
-                        const usersCollectionRef = collection(db, "users");
-                        addDoc(usersCollectionRef, { name: 'New Name', age: Number(20) });
 /*   
                         //const orderCollection = collection(db, 'users', user?.uid, 'orders');
                         const orderRef = collection(db, 'users', user?.uid, 'orders');
@@ -83,7 +81,7 @@ function Payment() {
                         dispatch({
                                 type: 'EMPTY_CART'
                         })
-                        
+
                         navigate('/orders', { replace: true });
                 });
         }

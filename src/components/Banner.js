@@ -10,8 +10,8 @@ function Banner() {
                 'https://m.media-amazon.com/images/I/61cSozkWFcL._SX3000_.jpg'
         ];
 
-        const  bannerImage = bannerImages.map((image) => (
-                <div className="banner">
+        const  bannerImage = bannerImages.map((image, i) => (
+                <div className="banner" key={i}>
                         <img src={image} alt="" />
                 </div>
         ));
