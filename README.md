@@ -18,5 +18,5 @@
 * Build production: npm run build
 * Deploy on Firebase: firebase deploy 
 ## How does it look like?
-### However, only the Book category is implemented
 https://clone-7d302.web.app/
+(However, only the Book category is implemented)
