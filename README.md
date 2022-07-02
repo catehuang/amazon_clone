@@ -13,11 +13,10 @@
 * firebase and firebase-tool
 * react-currency-format
 * react-responsive-carousel
-
 ## How to use it?
 * Test locally: firebase emulators:start
 * Build production: npm run build
 * Deploy on Firebase: firebase deploy 
-
 ## How does it look like?
+### However, only the Book category is implemented
 https://clone-7d302.web.app/
