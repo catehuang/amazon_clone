@@ -17,4 +17,7 @@
 ## How to use it?
 * Test locally: firebase emulators:start
 * Build production: npm run build
-* Deploy on Firebase: firebase deploy (https://clone-7d302.web.app/)
+* Deploy on Firebase: firebase deploy 
+
+## How does it look like?
+https://clone-7d302.web.app/
