@@ -9,7 +9,7 @@ function Card({ title, image, message, card_option_line1, card_option_line2 }) {
                                         <img src={image} alt="" />
                                 </div>
                                 <div class="my-5 min-h-48">                                        
-                                        <p class="text-red-700 font-bold">{card_option_line1}</p>
+                                        <p class="bg-red-700 text-white px-1">{card_option_line1}</p>
                                         <p>{card_option_line2}</p>
                                         <p class="text-cyan-600">{message}</p>
                                 </div>        
