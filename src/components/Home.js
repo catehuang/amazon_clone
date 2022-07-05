@@ -11,10 +11,9 @@ function Home() {
       <Header department="All" />
       <SubHeader />
       <div class="mx-auto">
-        <Banner />
-
-        <div class="py-10 px-5 grid grid-cols-4 gap-x-5 gap-y-10 grid-flow-row bg-gray-200 h-full">
-        <Card
+        <div class="-mb-20 -z-50"><Banner /></div>
+        <div class="pb-10 px-5 grid grid-cols-4 gap-x-5 gap-y-10 grid-flow-row bg-gray-200 h-full">
+          <Card
             title="Today's deal"
             image="https://m.media-amazon.com/images/I/41wmVnzwT0L._AC_SY230_.jpg"
             card_option_line1="Up to 41% off Top deal"
@@ -23,7 +22,7 @@ function Home() {
           />
 
           <Card
-            title='Shop our Home décor store'
+            title="Shop our Home décor store"
             image="https://images-na.ssl-images-amazon.com/images/G/15/CA-hq/2022/img/Home/XCM_CUTTLE_1409568_2190612_CA_CUTTLE_379x304_1X_en_CA._SY304_CB628571819_.jpg"
             message="See more"
           />

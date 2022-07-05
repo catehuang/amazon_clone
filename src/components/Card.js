@@ -2,7 +2,7 @@ import React from 'react';
 
 function Card({ title, image, message, card_option_line1, card_option_line2 }) {
         return (
-                <div class="w-full">
+                <div class="w-full z-0">
                         <div class="mx-auto p-3 flex flex-col  border rounded-xl bg-white h-full">
                                 <div class="my-3 font-bold">{title}</div>
                                 <div class="object-fit">
