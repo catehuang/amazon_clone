@@ -1,19 +1,19 @@
 import React from 'react';
-import './Card.css';
 
 function Card({ title, image, message, card_option_line1, card_option_line2 }) {
         return (
-                <div className="card">
-                        <div className="card_main_frame_1">
-                                <div className="card_title">{title}</div>
-                                <div className="card_image">
-                                        <img src=
-                                                {image} alt="" />
-                                        <p className="card_option_line1">{card_option_line1}</p>
-                                        <p className="card_option_line2">{card_option_line2}</p>
+                <div class="w-full">
+                        <div class="mx-auto p-3 flex flex-col  border rounded-xl bg-white h-full">
+                                <div class="my-3 font-bold">{title}</div>
+                                <div class="object-fit">
+                                        <img src={image} alt="" />
                                 </div>
+                                <div class="my-5 min-h-48">                                        
+                                        <p class="text-red-700 font-bold">{card_option_line1}</p>
+                                        <p>{card_option_line2}</p>
+                                        <p class="text-cyan-600">{message}</p>
+                                </div>        
                         </div>
-                        <div className="card_link">{message}</div>
                 </div>
         )
 }
