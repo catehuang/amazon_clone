@@ -13,8 +13,8 @@
 * firebase and firebase-tool
 * react-currency-format
 * react-responsive-carousel
-
 ## How to use it?
 * Test locally: firebase emulators:start
 * Build production: npm run build
-* Deploy on Firebase: firebase deploy
+* Deploy on Firebase: firebase deploy 
+
