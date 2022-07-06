@@ -45,14 +45,15 @@ function Login() {
 
   return (
     <div className="mx-auto">
-      <Link to="/">
-        <div className="">
+      <div className="my-5 flex justify-center">
+          <Link to="/">
           <img
-            className="w-48 mx-auto my-5"
+            className="w-48"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png"
           />
+           </Link>
         </div>
-      </Link>
+     
       <form>
         <div className="my-5 mx-auto border border-gray-600 rounded-lg py-5 px-8 w-96">
           <p className="text-2xl font-bold mb-3">Sign-In</p>
@@ -60,7 +61,7 @@ function Login() {
           <input
             type="text"
             value={email}
-            className="my-2 border border-gray-500 rounded w-full py-1"
+            className="my-2 border border-gray-500 rounded w-full py-1 px-2"
             onChange={(e) => setEmail(e.target.value)}
           />
 
@@ -68,13 +69,13 @@ function Login() {
           <input
             type="password"
             value={password}
-            className="my-2 border border-gray-500 rounded w-full py-1"
+            className="my-2 border border-gray-500 rounded w-full py-1 px-2"
             onChange={(e) => setPassword(e.target.value)}
           />
 
           <button
             type="submit"
-            className="mt-5 text-center bg-amber-200 w-full py-2 rounded hover:bg-amber-300"
+            className="mt-5 text-center border border-yellow-500 bg-amber-200 w-full py-2 rounded hover:bg-amber-300"
             onClick={signIn}
           >
             Login
@@ -92,13 +93,13 @@ function Login() {
           <span>New to Amazon FAKE CLONE ?</span>
         </p>
         <button
-          className="mt-5 text-center bg-amber-200 w-full py-2 rounded hover:bg-amber-300"
+          className="mt-5 text-center border border-yellow-500 bg-amber-200 w-full py-2 rounded hover:bg-amber-300"
           onClick={register}
         >
           Create your Amazon FAKE CLONE account
         </button>
       </div>
-      <div className="bg-gray-50 border-t-gray-200 py-3 text-sm">
+      <div className="bg-gray-50 border border-t-gray-200 py-3 text-sm">
         <div className="w-96 mx-auto my-1">
                 <div className="mx-10 flex flex-row justify-between text-cyan-700 mb-1">
                         <p>Condition of Use</p>

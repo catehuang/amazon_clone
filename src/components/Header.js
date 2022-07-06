@@ -21,7 +21,7 @@ function Header({ department }) {
       {/* Logo */}
       <div className="w-32 my-4 ml-2">
         <Link to="/">
-                <p class="text-2xl font-extrabold font-serif text-amber-50">Amazon</p>
+                <p className="text-2xl font-extrabold font-serif text-amber-50">Amazon</p>
           {/* <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png"
             alt="" 

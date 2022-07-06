@@ -11,7 +11,6 @@ function Product_Books({ id, title, price_sale, image, rating_global, rating }) 
                 dispatch({
                         type: 'ADD_TO_CART',
                         item: {
-                                key: id,
                                 id: id,
                                 title: title,
                                 image: image,
@@ -39,15 +38,13 @@ function Product_Books({ id, title, price_sale, image, rating_global, rating }) 
                                                 {Array(Math.floor(rating_global))
                                                         .fill()
                                                         .map((_, i) => (
-                                                                <span className="">&#9733;</span>
+                                                                <span key={i}>&#9733;</span>
                                                         ))}
                                         </div>
                                         <span className="text-sm">{ratingNumber}</span>
                                 </div>
                         </div>
-                        <button className="text-center bg-amber-200 w-full py-1 rounded hover:bg-amber-300" onClick={addToCart}>Add to Cart</button>
-                        
-                        
+                        <button className="text-sm text-center border-yellow-500 bg-amber-200 w-full py-1 rounded hover:bg-amber-300" onClick={addToCart}>Add to Cart</button>   
                 </div>
         )
 }

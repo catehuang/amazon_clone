@@ -1,16 +1,15 @@
 import React from 'react';
-import './Checkout_Nav.css';
 
 function Checkout_Nav() {
         return (
-                <div className="checkout_nav">
-                        <div className="nav_option"><strong>Today's Deal</strong></div>
-                        <div className="nav_option">Watched Deals</div>
-                        <div className="nav_option">Outlet Deals</div>
-                        <div className="nav_option">Warehouse Deals</div>
-                        <div className="nav_option">Coupons</div>
-                        <div className="nav_option">eBook Deals</div>
-                        <div className="nav_option">Subscribe & Save</div>
+                <div className="pl-5 flex flex-row gap-5 bg-gray-50 py-1 text-sm border border-b-gray-200">
+                        <div className="font-bold">Today's Deal</div>
+                        <div className="">Watched Deals</div>
+                        <div className="">Outlet Deals</div>
+                        <div className="">Warehouse Deals</div>
+                        <div className="">Coupons</div>
+                        <div className="">eBook Deals</div>
+                        <div className="">Subscribe & Save</div>
                 </div>
         )
 }

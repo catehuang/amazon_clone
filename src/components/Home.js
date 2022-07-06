@@ -8,7 +8,7 @@ import Banner from "./Banner";
 function Home() {
   return (
     <div className="w-full">
-      <Header department="All" />
+      <Header department="All"/>
       <SubHeader />
       <div className="mx-auto">
         <div className="-mb-20 min-h-36">

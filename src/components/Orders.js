@@ -48,10 +48,10 @@ function Orders() {
                 <>
                         <Header department="All" />
                         <SubHeader />
-                        <div className='orders'>
-                                <h1>Thank you, your order has been confirmed!</h1>
-
-                                <div className='orders__order'>
+                        <div>
+                                {/* <p>Thank you, your order has been confirmed!</p> */}
+                                <p className="h-80 text-center py-20">Oop! This page is not ready</p>
+                                <div>
                                         {orders?.map(order => (
                                                 <Order order={order} />
                                         ))}

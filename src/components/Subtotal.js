@@ -1,5 +1,4 @@
 import React from 'react';
-import './Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from './StateProvider';
 import { getCartTotal } from './reducer';
@@ -11,33 +10,33 @@ function Subtotal() {
         const [{ cart }, dispatch] = useStateValue();
 
         return (
-                <div className="subtotal">
-                        <div className="subtotal_message">
-                                <span className="subtotal_checkIcon"><CheckCircleIcon /></span>
-                                <p>Your order qualifies for FREE shipping (excludes remote locations). Choose this option at checkout. Details</p>
+                <div className="p-3 my-auto">
+                        <div className="flex text-xs">
+                                <span className="text-green-700"><CheckCircleIcon /></span>
+                                <p className="ml-3">Your order qualifies for FREE shipping (excludes remote locations). Choose this option at checkout. Details</p>
                         </div>
 
                         <CurrencyFormat
                                 renderText={(value) => (
-                                        <div className="subtotal_total">
-                                                <div>
-                                                        <p className="subtatol_item">Subtotal ({cart.length} items):</p>
-                                                        <h3 className="subtatol_value">{value}</h3>
+                                        <div className="pt-5 text-lg">
+                                                <div className="flex gap-5">
+                                                        <p className="">Subtotal ({cart.length} items):</p>
+                                                        <p className="font-bold">{value}</p>
                                                 </div>
-                                                <p className="subtotal_gift">
+                                                <p className="pb-5 text-sm">
                                                         <input type="checkbox" /> This order contains a gift
                                                 </p>
 
-                                                {value != '$0.00' &&
-                                                <button className="button_orange" onClick={e => navigate('/payment')}>
+                                                {value !== '$0.00' &&
+                                                <button className="text-sm border border-yellow-500 bg-amber-200 w-full py-1 rounded hover:bg-amber-300" onClick={e => navigate('/payment')}>
                                                         Proceed to Checkout
                                                 </button>
                                                 }
                                                 
                                                 {value === '$0.00' &&
-                                                <button className="button_disabled">
+                                                <p className="text-sm text-center border border-gray-200 bg-gray-300 w-full py-2 rounded">
                                                         Proceed to Checkout
-                                                </button>
+                                                </p>
                                                 }
                                         </div>
                                 )}

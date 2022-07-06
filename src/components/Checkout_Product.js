@@ -1,41 +1,51 @@
-import React from 'react';
-import './Checkout_Product.css';
-import { useStateValue } from './StateProvider';
-import CurrencyFormat from 'react-currency-format';
+import React from "react";
+import { useStateValue } from "./StateProvider";
+import CurrencyFormat from "react-currency-format";
 
-function Checkout_Product({ id, image, title, price_sale, rating_global, rating, hideButton }) {
+function Checkout_Product({
+        id,
+        image,
+        title,
+        price_sale,
+        rating_global,
+        rating,
+        hideButton,
+}) {
         const [{ cart }, dispatch] = useStateValue();
 
         const removeFromCart = () => {
                 dispatch({
-                        type: 'REMOVE_FROM_CART',
+                        type: "REMOVE_FROM_CART",
                         id: id,
-                })
-        }
+                });
+        };
 
         return (
-                <div className='checkout_product'>
-                        <div className="checkout_product_image"><img src={image} /></div>
-                        <div className="checkout_product_info">
-                                <h4>{title}</h4>
-                                <h5 className="type_of_book">Hardcover</h5>
-                                <p className="available font_color_link">In Stock</p>
-                                <p className="shipping_info">Ship from and sold by Amazon.ca</p>
-                                <div className="isGift">
-                                        <input type="checkbox" />
-                                        <p>This will be a gift</p>
+                <div>
+                        <hr className="pb-5" />
+                <div className="flex gap-5 pb-5 pl-10 pr-16">
+                        <img className="h-40" src={image} />
+                        <div className="grow flex flex-col justify-between">
+                                <p className="font-bold">{title}</p>
+                                <p className="">Hardcover</p>
+                                <p className="text-xs text-cyan-700">In Stock</p>
+                                <p className="text-xs">Ship from and sold by Amazon.ca</p>
+                                <div className="flex">
+                                        <input className="my-auto text-xs" type="checkbox" />
+                                        <p className="pl-2 text-xs">This will be a gift</p>
                                 </div>
 
                                 {!hideButton && (
-                                <button className="button_orange" onClick={removeFromCart}>Delete</button>
+                                        <button
+                                                className="text-sm border border-yellow-500 bg-amber-200 rounded hover:bg-amber-300 w-24 h-6"
+                                                onClick={removeFromCart}
+                                        >
+                                                Delete
+                                        </button>
                                 )}
                         </div>
                         <CurrencyFormat
-                                renderText={(value) => (
-                                        <div className="checkout_product_price">
-                                                <h4>{value}</h4>
-                                        </div>
-                                )}
+                                renderText={(value) => <p className="font-bold">{value}</p>}
                                 decimalScale={2}
                                 fixedDecimalScale={true}
                                 value={price_sale}
@@ -44,7 +54,8 @@ function Checkout_Product({ id, image, title, price_sale, rating_global, rating,
                                 prefix={"$"}
                         />
                 </div>
-        )
+                </div>
+        );
 }
 
 export default Checkout_Product;
