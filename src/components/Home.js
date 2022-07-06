@@ -11,10 +11,10 @@ function Home() {
       <Header department="All" />
       <SubHeader />
       <div className="mx-auto">
-        <div className="-mb-20 -z-50">
+        <div className="-mb-20 min-h-36">
           <Banner />
         </div>
-        <div className="pb-10 px-5 grid grid-cols-4 gap-x-5 gap-y-10 grid-flow-row bg-gray-200 h-full">
+        <div className="pb-10 px-5 grid grid-cols-4 gap-x-5 gap-y-10 grid-flow-row bg-gray-200 bg-blend-soft-light h-full">
           <Card
             title="Today's deal"
             image="https://m.media-amazon.com/images/I/41wmVnzwT0L._AC_SY230_.jpg"

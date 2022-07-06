@@ -1,13 +1,13 @@
 import React from 'react';
-import './SubHeader.css'
 import { Link } from "react-router-dom";
+import ArrowDropDownTwoToneIcon from "@material-ui/icons/ArrowDropDownTwoTone";
 
 function SubHeader() {
         return (
-                <div className="subHeader">
-                        <div className="subHeader_option">
-                                <span className="subHeader_line">
-                                        <div className="subHeader_menuIcon">
+                <div className="flex flex-row gap-4 py-2 px-5 bg-[#032349] text-white">
+                        <div >
+                                <span >
+                                        <div>
                                                 {/*Menu icon */}
                                                 <div></div>
                                                 <div></div>
@@ -16,25 +16,23 @@ function SubHeader() {
                                         All
                                 </span>
                         </div>                        
-                        <Link to="/books" className="subHeader_link">
-                                <div className="subHeader_option"><p className="subHeader_active">Books</p></div>
+                        <Link to="/books">
+                                <div className="active: text-yellow-300">Books</div>
                         </Link>
-                        <div className="subHeader_option">Best Sellers</div>
-                        <div className="subHeader_option">Deal Store</div>
-                        <div className="subHeader_option subHeader_customer_service">Customer Service</div>
-                        <div className="subHeader_option subHeader_new_release">New Releases</div>
-                        <div className="subHeader_option subHeader_prime">
-                                <span className="subHeader_line">
-                                        Prime <span className="subHeader_dropdownIcon">▼</span> 
-                                </span>
+                        <div>Best Sellers</div>
+                        <div>Deal Store</div>
+                        <div>Customer Service</div>
+                        <div>New Releases</div>
+                        <div>
+                                Prime <ArrowDropDownTwoToneIcon />
                         </div>
-                        <div className="subHeader_option subHeader_fashion">Fashion</div>
-                        <div className="subHeader_option subHeader_sell">Sell</div>
-                        <div className="subHeader_option subHeader_electronics">Electronics</div>
-                        <div className="subHeader_option subHeader_home">Home</div>
-                        <div className="subHeader_option subHeader_amazon_outlet">Amazon Outlet</div>
-                        <div className="subHeader_option subHeader_toys_games">Toys & Games</div>
-                        <h4 className="subHeader_slogan">New deals everyday</h4>
+                        <div>Fashion</div>
+                        <div>Sell</div>
+                        <div className="hidden lg:inline-block">Electronics</div>
+                        <div className="hidden lg:inline-block">Home</div>
+                        <div className="hidden lg:inline-block">Amazon Outlet</div>
+                        <div className="grow hidden xl:inline-block">Toys & Games</div>
+                        <div className="hidden 2xl:inline-block">New deals everyday</div>
                 </div>
         )
 }

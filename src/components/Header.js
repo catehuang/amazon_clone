@@ -1,5 +1,4 @@
 import React from "react";
-//import './Header.css';
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ArrowDropDownTwoToneIcon from "@material-ui/icons/ArrowDropDownTwoTone";
@@ -18,11 +17,11 @@ function Header({ department }) {
   };
 
   return (
-    <div className="flex flex-row gap-2 bg-zinc-900 text-white px-3" >
+    <div className="flex gap-2 bg-[#010b18] text-white px-3" >
       {/* Logo */}
       <div className="w-32 my-4 ml-2">
         <Link to="/">
-                <p class="text-2xl font-extrabold font-serif text-yellow-100">Amazon</p>
+                <p class="text-2xl font-extrabold font-serif text-amber-50">Amazon</p>
           {/* <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png"
             alt="" 
@@ -65,7 +64,7 @@ function Header({ department }) {
       </Link>
 
       {/* orders */}
-      <Link to="/orders">
+      <Link to="/orders" className="hidden xl:inline-block">
         <div className="mx-3 py-2 flex flex-col active: text-white">
           <span>Return</span>
           <span>& Orders</span>
