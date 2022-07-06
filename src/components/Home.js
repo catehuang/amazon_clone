@@ -7,12 +7,14 @@ import Banner from "./Banner";
 
 function Home() {
   return (
-    <div class="w-full">
+    <div className="w-full">
       <Header department="All" />
       <SubHeader />
-      <div class="mx-auto">
-        <div class="-mb-20 -z-50"><Banner /></div>
-        <div class="pb-10 px-5 grid grid-cols-4 gap-x-5 gap-y-10 grid-flow-row bg-gray-200 h-full">
+      <div className="mx-auto">
+        <div className="-mb-20 -z-50">
+          <Banner />
+        </div>
+        <div className="pb-10 px-5 grid grid-cols-4 gap-x-5 gap-y-10 grid-flow-row bg-gray-200 h-full">
           <Card
             title="Today's deal"
             image="https://m.media-amazon.com/images/I/41wmVnzwT0L._AC_SY230_.jpg"

@@ -1,78 +1,86 @@
-import React from 'react';
-import './Header.css';
-import SearchIcon from '@material-ui/icons/Search';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import ArrowDropDownTwoToneIcon from '@material-ui/icons/ArrowDropDownTwoTone';
+import React from "react";
+//import './Header.css';
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import ArrowDropDownTwoToneIcon from "@material-ui/icons/ArrowDropDownTwoTone";
 import { Link } from "react-router-dom";
-import { useStateValue } from './StateProvider';
-import { auth } from './firebase';
-import { signOut } from 'firebase/auth'
+import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
+import { signOut } from "firebase/auth";
 
 function Header({ department }) {
-        const [{ cart, user }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
 
-        const handleAuthentication = () => {
-                if (user) {
-                        signOut(auth);
-                }
-        }
+  const handleAuthentication = () => {
+    if (user) {
+      signOut(auth);
+    }
+  };
 
-        return (
-                <div className='header'>
-                        { /* Logo */}
-                        <Link to="/" className="header_link">
-                                <img className="header_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png" alt="" />
-                        </Link>
+  return (
+    <div className="flex flex-row gap-2 bg-zinc-900 text-white px-3" >
+      {/* Logo */}
+      <div className="w-32 my-4 ml-2">
+        <Link to="/">
+                <p class="text-2xl font-extrabold font-serif text-yellow-100">Amazon</p>
+          {/* <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png"
+            alt="" 
+          />*/}
+        </Link>
+      </div>
 
-                        {/* Search bar */}
-                        <div className="header_search">
-                                <span className="header_search_category">
-                                        {department}
-                                        <ArrowDropDownTwoToneIcon className="header_dropdownIcon" />
-                                </span>
-                                <input className="header_searchInput" type="text" />
-                                <span><SearchIcon className="header_searchIcon" /></span>
-                        </div>
+      {/* Search bar */}
+      <div className="grow flex flex-row h-10 my-auto">
+        <div className="py-2 border-gray-100 border-l rounded-l-xl  border-t border-b bg-gray-100 text-black">
+          <span className="pl-3 pr-1">{department}</span>
+          <ArrowDropDownTwoToneIcon />
+        </div>
+        <input className="grow p-3 border py-0 text-black" type="text" />
+        <span className="py-2 px-3 border-amber-400 rounded-r-xl border-t border-r border-b bg-amber-400 text-black">
+          <SearchIcon />
+        </span>
+      </div>
 
-                        <div className="header_nav">
-                                {/* country */}
-                                <div className="header_optionCountry">
-                                        <img className="flagIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png" alt="" />
-                                        <span className="subHeader_dropdownIcon">▼</span>
-                                </div>
+      {/* country */}
+      <div className="mx-3 pt-4">
+        <img
+          className="object-scale-down max-w-5 max-h-5 pr-2 inline-flex"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png"
+          alt=""
+        />
+        <ArrowDropDownTwoToneIcon />
+      </div>
 
-                                <div className="header_address">
-                                        <div className="header_option">
-                                                <span className="header_optionLineOne">Hello,</span>
-                                                <span className="header_optionLineTwo"> {user ? user.email : 'Guest'}</span>
-                                        </div>
-                                </div>
+      <div className="mx-3 py-2 flex flex-col">
+        <span>Hello,</span>
+        <span> {user ? user.email : "Guest"}</span>
+      </div>
 
-                                <Link to={!user && "/login"} className="header_link" onClick={handleAuthentication}>
-                                        <div className="header_option header_accounts_lists" >
-                                                <span className="header_optionLineOne">Accounts & Lists </span>
-                                                <span className="header_optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
-                                        </div>
-                                </Link>
+      <Link to={!user && "/login"} onClick={handleAuthentication}>
+        <div className="mx-3 py-2 flex flex-col active: text-white">
+          <span>Accounts</span>
+          <span>{user ? "Sign Out" : "Sign In"}</span>
+        </div>
+      </Link>
 
-                                {/* orders */}
-                                <Link to='/orders'  className="header_link">
-                                        <div className="header_option header_return_orders">
-                                                <span className="header_optionLineOne">Return</span>
-                                                <span className="header_optionLineTwo">& Orders</span>
-                                        </div>
-                                </Link>
+      {/* orders */}
+      <Link to="/orders">
+        <div className="mx-3 py-2 flex flex-col active: text-white">
+          <span>Return</span>
+          <span>& Orders</span>
+        </div>
+      </Link>
 
-                                {/* shoppingcart */}
-                                <Link to="/checkout" className="header_link">
-                                        <div className="header_option">
-                                                <span className="header_optionLineOne header_cartCount">{cart?.length}</span>
-                                                <ShoppingCartIcon className="header_optionCart" />
-                                        </div>
-                                </Link>
-                        </div>
-                </div>
-        )
+      {/* shoppingcart */}
+      <Link to="/checkout">
+        <div className="ml-3 mr-5 pt-4 active: text-white">
+          <ShoppingCartIcon />
+          <span>{cart?.length}</span>
+        </div>
+      </Link>
+    </div>
+  );
 }
 
 export default Header;
