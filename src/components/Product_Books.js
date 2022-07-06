@@ -1,5 +1,4 @@
 import React from 'react';
-import './Product_Books.css';
 import { useStateValue } from './StateProvider';
 
 function Product_Books({ id, title, price_sale, image, rating_global, rating }) {
@@ -12,6 +11,7 @@ function Product_Books({ id, title, price_sale, image, rating_global, rating }) 
                 dispatch({
                         type: 'ADD_TO_CART',
                         item: {
+                                key: id,
                                 id: id,
                                 title: title,
                                 image: image,
@@ -23,29 +23,31 @@ function Product_Books({ id, title, price_sale, image, rating_global, rating }) 
         );
         
         return (
-                <div className="product">
-                        <img src={image} alt="" />
-                        <div className="product_info">
-                                <p className="product_price">
-                                        <span className="product_priceSymbol">$</span>
-                                        <strong className="product_priceSale">{price_saleInteger}</strong>
-                                        <span className="product_priceFraction">{price_saleFraction}</span>
+                <div className="mx-auto bg-white pt-3">
+                        <img className="object-contain h-52 w-52 mx-auto" src={image} alt="" />
+                        <div className="grid grid-rows-2 mb-3 px-3">
+                                <p className="pt-4">
+                                        <span className="align-top">$</span>
+                                        <span className="text-xl font-bold">{price_saleInteger}</span>
+                                        <span className="align-top">{price_saleFraction}</span>
                                 </p>
 
-                                <p className="product_title">{title}</p>
+                                <p className="line-clamp-2 h-12">{title}</p>
 
-                                <div className="product_rating">
-                                        <div className="product_rating_stars">
+                                <div className="">
+                                        <div className="text-amber-500 inline pr-2">
                                                 {Array(Math.floor(rating_global))
                                                         .fill()
                                                         .map((_, i) => (
-                                                                <span className="product_stars_solid">&#9733;</span>
+                                                                <span className="">&#9733;</span>
                                                         ))}
                                         </div>
-                                        <span className="product_ratingNumber">{ratingNumber}</span>
+                                        <span className="text-sm">{ratingNumber}</span>
                                 </div>
                         </div>
-                        <button className="button_orange" onClick={addToCart}>Add to Cart</button>
+                        <button className="text-center bg-amber-200 w-full py-1 rounded hover:bg-amber-300" onClick={addToCart}>Add to Cart</button>
+                        
+                        
                 </div>
         )
 }
