@@ -17,6 +17,7 @@
 * react-currency-format
 * react-responsive-carousel
 * TailwindCss
+* @tailwindcss/line-clamp
 ## How to use it?
 * Test locally: firebase emulators:start
 * Build production: npm run build
